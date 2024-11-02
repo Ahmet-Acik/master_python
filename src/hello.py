@@ -26,7 +26,7 @@ print("Ahmet", "Ahmetoglu", "message", sep=" , ", end=".\n")  # sep and end para
 # help(print)
 
 # info = """
-# This is a multiline comment or docstring 
+# This is a multiline comment or docstring
 
 # print(*args, sep=' ', end='\n', file=None, flush=False)
 #     Prints the values to a stream, or to sys.stdout by default.
@@ -38,8 +38,8 @@ print("Ahmet", "Ahmetoglu", "message", sep=" , ", end=".\n")  # sep and end para
 #     file
 #       a file-like object (stream); defaults to the current sys.stdout.
 #     flush
-#       whether to forcibly flush the stream.   
-      
+#       whether to forcibly flush the stream.
+
 # """
 
 # print(info)

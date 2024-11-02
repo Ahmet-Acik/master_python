@@ -1,10 +1,12 @@
 # src/conditionals.py
 
+
 def check_adult(age):
     if age >= 18:
         return "You are an adult."
     else:
         return "You are a minor."
+
 
 def check_age_group(age):
     if age >= 18:
@@ -13,6 +15,7 @@ def check_age_group(age):
         return "You are a teenager."
     else:
         return "You are a minor."
+
 
 def check_driving_eligibility(age, has_license):
     if age >= 18:
@@ -23,23 +26,39 @@ def check_driving_eligibility(age, has_license):
     else:
         return "You cannot drive."
 
+
 def greet_name(name):
     if name == "Ahmet":
         return "Hello Ahmet!"
     else:
         return "Hello Stranger!"
 
+
 def check_name_conditions(name):
-    if name.startswith("A") and name.endswith("t") and name.isalpha() and name.istitle() and len(name) == 5:
+    if (
+        name.startswith("A")
+        and name.endswith("t")
+        and name.isalpha()
+        and name.istitle()
+        and len(name) == 5
+    ):
         return "success"
     else:
         return "fail"
 
+
 def check_name_any_conditions(name):
-    if name.isupper() or name.startswith("A") or name.endswith("t") or name.isalpha() or name.istitle():
+    if (
+        name.isupper()
+        or name.startswith("A")
+        or name.endswith("t")
+        or name.isalpha()
+        or name.istitle()
+    ):
         return "success"
     else:
         return "fail"
+
 
 def compare_xyz(x, y, z):
     if x > y:
@@ -48,6 +67,7 @@ def compare_xyz(x, y, z):
         return "y is greater than z"
     else:
         return "z is greater than x and y"
+
 
 def check_game(game):
     match game:
@@ -59,6 +79,7 @@ def check_game(game):
             return "You are playing tennis."
         case _:
             return "You are playing something else."
+
 
 def get_month_name(month):
     match month:
@@ -88,6 +109,7 @@ def get_month_name(month):
             return "December"
         case _:
             return "Invalid month"
+
 
 if __name__ == "__main__":
     print(check_adult(21))  # Output: You are an adult.

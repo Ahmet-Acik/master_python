@@ -1,15 +1,89 @@
 # strings.py
+# string declaration and assignment
+# string concatenation
+# string repetition
+# string formatting
+# string slicing
+# string methods
+
+
+def declare_and_assign():
+    """
+    String declaration and assignment.
+    """
+    return "Hello, World!"
+
+
+def concatenate_strings(str1, str2):
+    """
+    String concatenation.
+    """
+    return str1 + str2
+
+
+def repeat_string(string, times):
+    """
+    String repetition.
+    """
+    return string * times
+
+
+def format_string(name, age):
+    """
+    String formatting.
+    """
+    return f"My name is {name} and I am {age} years old."
+
+
+def slice_string(string, start, end):
+    """
+    String slicing.
+    """
+    return string[start:end]
+
+
+def string_methods(string):
+    """
+    Various string methods.
+    """
+    return {
+        "upper": string.upper(),
+        "lower": string.lower(),
+        "capitalize": string.capitalize(),
+        "title": string.title(),
+        "swapcase": string.swapcase(),
+        "strip": string.strip(),
+        "lstrip": string.lstrip(),
+        "rstrip": string.rstrip(),
+        "find": string.find("a"),
+        "replace": string.replace("a", "o"),
+        "split": string.split(),
+        "join": "-".join(string),
+        "startswith": string.startswith("H"),
+        "endswith": string.endswith("d"),
+        "isalpha": string.isalpha(),
+        "isdigit": string.isdigit(),
+        "isalnum": string.isalnum(),
+        "isspace": string.isspace(),
+        "islower": string.islower(),
+        "isupper": string.isupper(),
+        "istitle": string.istitle(),
+    }
+
 
 def print_statements():
-    print('Hello VSCODE')
+    print("Hello VSCODE")
     print("It's a beautiful day")
-    print('It\'s a beautiful day')
+    print("It's a beautiful day")
+
 
 def get_character_in_name(name, index):
-    return name[index]  
+    return name[index]
+
 
 def get_substring(string, start, end):
     return string[start:end]
+
 
 def get_quote_slices(quote):
     return {
@@ -19,8 +93,9 @@ def get_quote_slices(quote):
         "slice_30_40": quote[30:40],
         "full_quote": quote[:],
         "slice_3_16_2": quote[3:16:2],
-        "slice_2_step": quote[::2]
+        "slice_2_step": quote[::2],
     }
+
 
 def get_learning_fun_slices(learning_fun):
     return {
@@ -29,24 +104,29 @@ def get_learning_fun_slices(learning_fun):
         "slice_7_9": learning_fun[7:9],
         "slice_neg_3_end": learning_fun[-3:],
         "slice_0_neg_4": learning_fun[:-4],
-        "reversed": learning_fun[::-1]
+        "reversed": learning_fun[::-1],
     }
+
 
 def reverse_string(string):
     return string[::-1]
 
+
 def concatenate_names(first_name, last_name):
     return first_name + " " + last_name
 
+
 def repeat_string(string, times):
     return string * times
+
 
 def format_string(name, age):
     return {
         "concat": "My name is " + name + " and I am " + str(age) + " years old.",
         "format": "My name is {} and I am {} years old.".format(name, age),
-        "f_string": f"My name is {name} and I am {age} years old."
+        "f_string": f"My name is {name} and I am {age} years old.",
     }
+
 
 def string_methods(name):
     return {
@@ -91,10 +171,18 @@ def string_methods(name):
         "encode_latin_1": name.encode("latin-1"),
         "encode_cp1254": name.encode("cp1254"),
         "encode_cp857": name.encode("cp857"),
-        "encode_cp1252": name.encode("cp1252")
+        "encode_cp1252": name.encode("cp1252"),
     }
 
+
 if __name__ == "__main__":
+    print(declare_and_assign())
+    print(concatenate_strings("Hello", "World"))
+    print(repeat_string("Hello", 3))
+    print(format_string("Ahmet", 21))
+    print(slice_string("Hello, World!", 0, 5))
+    print(slice_string("Hello, World!", 7, 12))
+    print(string_methods("Hello, World!"))
     print_statements()
     print(get_character_in_name("Ahmetoglu", 0))
     print(get_character_in_name("Ahmetoglu", -1))
@@ -103,7 +191,7 @@ if __name__ == "__main__":
     quote = "The greatest glory in living lies not in never falling, but in rising every time we fall."
     print(get_quote_slices(quote))
 
-    learning_fun = 'Python is fun'
+    learning_fun = "Python is fun"
     print(get_learning_fun_slices(learning_fun))
 
     print(reverse_string("Ahmetoglu"))

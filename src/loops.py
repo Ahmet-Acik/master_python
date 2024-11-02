@@ -17,12 +17,12 @@ for number in range(5, 0, -1):
 fruits = ["apple", "banana", "cherry"]
 for fruit in fruits:
     print(fruit)  # Output: apple banana cherry
-    
+
 # The for loop can also iterate over a tuple of items.
 fruits = ("apple", "banana", "cherry", "mango", "orange")
 for fruit in fruits:
     print(fruit)  # Output: apple banana cherry mango orange
-    
+
 
 # The for loop can also iterate over a string.
 for letter in "Ahmet":
@@ -38,13 +38,13 @@ for (
     person.items()
 ):  # The items() method returns a view object that displays a list of a dictionary's key-value tuple pairs.
     print(key, value)  # Output: name Ahmet age 21 city Istanbul
-    
+
 
 # The for loop can also iterate over a set.
 fruits = {"apple", "banana", "cherry", "mango", "orange"}
 for fruit in fruits:
     print(fruit)  # Output: apple banana cherry mango orange
-    
+
 # while loop
 # The while loop executes a block of code as long as the specified condition is true.
 i = 1
@@ -90,9 +90,13 @@ for i in range(3):
 # The pass statement is used as a placeholder when a statement is required syntactically but you do not want any command or code to execute.
 for i in range(5):
     pass  # Do nothing.
+
+
 # The pass statement is also used for empty functions.
 def my_function():
     pass  # Do nothing.
+
+
 # The pass statement is also used for empty loops.
 for i in range(5):
     pass  # Do nothing.
@@ -129,7 +133,7 @@ for fruit in sorted(fruits, reverse=True):
 # Output: cherry banana apple
 
 # The sorted() function can also take a key argument to specify a function to be called on each list element before making comparisons.
-fruits = ["apple","strawberry" ,"banana", "cherry"]
+fruits = ["apple", "strawberry", "banana", "cherry"]
 for fruit in sorted(fruits, key=len):
     print(fruit)
 # Output: apple cherry banana strawberry
@@ -152,8 +156,35 @@ else:
     print("Count is no longer greater than 0.")
 # Output: 10 9 8 7 6 5 4 3 2 1 Count is no longer greater than 0.
 
+# loop control statements
+# The break statement is used to exit the loop.
+for i in range(5):
+    if i == 3:
+        break  # Exit the loop when i is equal to 3.
+    print(i)
+# Output: 0 1 2
+
+# The continue statement is used to skip the current iteration and continue with the next iteration.
+for i in range(5):
+    if i == 3:
+        continue  # Skip the iteration when i is equal to 3.
+    print(i)
+# Output: 0 1 2 4
+
+# The pass statement is used as a placeholder when a statement is required syntactically but you do not want any command or code to execute.
+for i in range(5):
+    pass  # Do nothing.
+
+# The else block is executed when the condition in the loop becomes false.
+for i in range(5):
+    print(i)
+else:
+    print("i is no longer less than 5.")
+# Output: 0 1 2 3 4 i is no longer less than 5.
+
 
 # src/loops.py
+
 
 def range_sequence(start, end, step=1):
     """
@@ -161,11 +192,13 @@ def range_sequence(start, end, step=1):
     """
     return list(range(start, end, step))
 
+
 def iterate_list(items):
     """
     Iterates over a list of items.
     """
     return [item for item in items]
+
 
 def iterate_string(string):
     """
@@ -173,11 +206,13 @@ def iterate_string(string):
     """
     return [char for char in string]
 
+
 def iterate_dict(dictionary):
     """
     Iterates over a dictionary's key-value pairs.
     """
     return [(key, value) for key, value in dictionary.items()]
+
 
 def while_loop_example(limit):
     """
@@ -189,6 +224,7 @@ def while_loop_example(limit):
         result.append(i)
         i += 1
     return result
+
 
 def while_loop_with_break(limit):
     """
@@ -203,6 +239,7 @@ def while_loop_with_break(limit):
         i += 1
     return result
 
+
 def while_loop_with_continue(limit):
     """
     Uses the continue statement to skip the current iteration and continue with the next iteration.
@@ -215,6 +252,7 @@ def while_loop_with_continue(limit):
             continue
         result.append(i)
     return result
+
 
 def while_loop_with_else(limit):
     """
@@ -229,6 +267,7 @@ def while_loop_with_else(limit):
         result.append("i is no longer less than {}".format(limit))
     return result
 
+
 def nested_loops(outer, inner):
     """
     Uses nested loops to iterate over a range of numbers.
@@ -239,11 +278,13 @@ def nested_loops(outer, inner):
             result.append((i, j))
     return result
 
+
 def enumerate_example(items):
     """
     Uses the enumerate() function to add a counter to an iterable.
     """
     return [(index, item) for index, item in enumerate(items)]
+
 
 def zip_example(list1, list2):
     """
@@ -251,17 +292,20 @@ def zip_example(list1, list2):
     """
     return [(item1, item2) for item1, item2 in zip(list1, list2)]
 
+
 def reversed_example(items):
     """
     Uses the reversed() function to access the given sequence in reverse order.
     """
     return [item for item in reversed(items)]
 
+
 def sorted_example(items, reverse=False, key=None):
     """
     Uses the sorted() function to return a new sorted list from the elements of any iterable.
     """
     return sorted(items, reverse=reverse, key=key)
+
 
 def do_while_example(limit):
     """
@@ -276,6 +320,7 @@ def do_while_example(limit):
             break
     return result
 
+
 def while_loop_with_else_example(start):
     """
     Uses a while loop with an else block.
@@ -289,7 +334,8 @@ def while_loop_with_else_example(start):
         result.append("Count is no longer greater than 0.")
     return result
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     # Example usage of the functions
     print(range_sequence(1, 6))
     print(iterate_list(["apple", "banana", "cherry"]))
@@ -308,4 +354,3 @@ if __name__ == '__main__':
     print(sorted_example(["apple", "strawberry", "banana", "cherry"], key=len))
     print(do_while_example(5))
     print(while_loop_with_else_example(10))
-    

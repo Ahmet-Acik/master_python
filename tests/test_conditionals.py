@@ -2,12 +2,20 @@ import sys
 import os
 import unittest
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 
 from conditionals import (
-    check_adult, check_age_group, check_driving_eligibility, greet_name,
-    check_name_conditions, check_name_any_conditions, compare_xyz, check_game, get_month_name
+    check_adult,
+    check_age_group,
+    check_driving_eligibility,
+    greet_name,
+    check_name_conditions,
+    check_name_any_conditions,
+    compare_xyz,
+    check_game,
+    get_month_name,
 )
+
 
 class TestConditionals(unittest.TestCase):
 
@@ -27,7 +35,9 @@ class TestConditionals(unittest.TestCase):
 
     def test_check_driving_eligibility(self):
         self.assertEqual(check_driving_eligibility(21, True), "You can drive.")
-        self.assertEqual(check_driving_eligibility(21, False), "You can take driving test.")
+        self.assertEqual(
+            check_driving_eligibility(21, False), "You can take driving test."
+        )
         self.assertEqual(check_driving_eligibility(17, True), "You cannot drive.")
         self.assertEqual(check_driving_eligibility(17, False), "You cannot drive.")
 
@@ -72,5 +82,6 @@ class TestConditionals(unittest.TestCase):
         self.assertEqual(get_month_name(0), "Invalid month")
         self.assertEqual(get_month_name(13), "Invalid month")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
