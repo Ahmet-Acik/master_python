@@ -6,6 +6,68 @@
 # string slicing
 # string methods
 
+# my_name = ""
+# my_name = "Ahmet"
+# print(my_name)
+my_quote = "It's a beatiful day!, The greatest glory in living lies not in never falling, but in rising every time we fall."
+print(my_quote)
+print(my_quote[0])
+print(my_quote[0:10])
+print(my_quote[10:20:2])
+print(my_quote[::2])
+
+my_number = "01234567890"
+print(my_number[1:7])
+print(my_number[:])
+print(my_number[:7])
+print(my_number[1:7:3])
+print(my_number[::2])
+
+print(my_number[::-1])
+
+my_first_name = "Ahmet"
+my_last_name = "Oglu"
+my_full_name = my_first_name + " " + my_last_name
+my_full_name2 = my_first_name + my_last_name
+print(my_full_name)
+print(my_full_name2)
+print(my_full_name * 3)
+
+my_name = "ahmet"
+print(len(my_name))
+print(my_name.upper())
+print(my_name.lower())
+print(my_name.capitalize())
+print(my_name.title())
+print(my_name.swapcase())
+print(my_name.strip()) # removes leading and trailing whitespaces
+
+print(my_name.find("h")) # returns the index of the first occurence
+# print(my_name.index("z")) # returns -1 if not found
+print(my_name.replace("a", "o"))
+print(my_name.count("h"))
+print(my_name.startswith("a"))
+print(my_name.endswith("t"))
+print(my_name.isalpha())
+print(my_name.isdigit())
+print(my_name.isalnum())
+print(my_name.isspace())
+print(my_name.islower())
+print(my_name.isupper())
+
+sum =f"The sum of 2 + 2 is {2+2}"
+print(sum)
+
+x=2
+y=3
+z=4
+print(f"x is {x}, y is {y}, and z is {z}")
+
+hello = "Hello, World!, I am Ahmet"
+print(hello.split())
+print(hello.split(","))
+print(hello.split("!"))
+
 
 def declare_and_assign():
     """
