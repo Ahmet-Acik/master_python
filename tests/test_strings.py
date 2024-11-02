@@ -4,7 +4,6 @@ import unittest
 from unittest.mock import patch
 from io import StringIO
 
-# Add src directory to PYTHONPATH
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 from strings import (
