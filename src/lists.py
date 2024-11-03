@@ -1,3 +1,54 @@
+# List creation
+empty_list = []
+print(f"empty_list: {empty_list}")
+grocery_list = ["milk", "bread", "eggs"]
+print(f"grocery_list: {grocery_list}")
+
+# List methods
+grocery_list.append("butter")
+print(f"grocery_list append('butter' :){grocery_list}")
+grocery_list.insert(1, "cheese")
+print(f"grocery_list insert(1, 'cheese'): {grocery_list}")
+grocery_list.extend(["yogurt", "juice"])
+print(f"grocery_list extend(['yogurt', 'juice']): {grocery_list}")
+grocery_list.remove("cheese")
+print(f"grocery_list remove('cheese'): {grocery_list}")
+popped_item = grocery_list.pop(1)
+print(f"grocery_list pop(1): {grocery_list}")
+grocery_list.clear()
+print(f"grocery_list clear(): {grocery_list}")
+
+# List operations
+fruit_list = ["apple", "banana", "cherry"]
+color_list = ["red", "yellow", "pink"]
+fruit_color_list = fruit_list + color_list
+print(f"fruit_color_list: {fruit_color_list}")
+repeated_fruit_list = fruit_list * 2
+print(f"repeated_fruit_list: {repeated_fruit_list}")
+
+# List slicing
+print(f"fruit_list[1:3]: {fruit_list[1:3]}")
+print(f"fruit_list[:2]: {fruit_list[:2]}")
+print(f"fruit_list[1:]: {fruit_list[1:]}")
+print(f"fruit_list[:]: {fruit_list[:]}")
+print(f"fruit_list[::2]: {fruit_list[::2]}")
+print(f"fruit_list[::-1]: {fruit_list[::-1]}")
+
+# List comprehensions
+squares = [x**2 for x in range(1, 6)]
+even_numbers = [x for x in range(1, 11) if x % 2 == 0]
+odd_numbers = [x for x in range(1, 11) if x % 2 != 0]
+
+# Print results
+print(f"grocery_list: {grocery_list}")
+print(f"popped_item: {popped_item}")
+print(f"fruit_color_list: {fruit_color_list}")
+print(f"repeated_fruit_list: {repeated_fruit_list}")
+print(f"squares: {squares}")
+print(f"even_numbers: {even_numbers}")
+print(f"odd_numbers: {odd_numbers}")
+
+
 my_empty_list = []
 
 shopping_list = ["apple", "banana", "cherry"]
