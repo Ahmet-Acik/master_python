@@ -4,7 +4,7 @@
 
 # Creating tuples
 empty_tuple = ()
-single_element_tuple = (1,)
+single_element_tuple = (1,) 
 my_tuple = (1, 2, 3, 4, 5)
 heterogeneous_tuple = (1, "apple", 3.14, True)
 
