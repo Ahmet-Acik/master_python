@@ -1,32 +1,78 @@
-# lms_data_sets.py
+# library_management.py
 """
-    ### Explanation
+Library Management System
 
-    1. **Lists**:
-        - books : A list of tuples, where each tuple contains the title, author, year, and genre of a book.
-        - `users`: A list of users who can check out books.
+This module uses lists, sets, tuples, and dictionaries to manage library data. 
+It includes comprehensive business logic and demonstrates the use of common methods for each data structure.
 
-    2. **Tuples**:
-        - Each book in the books list is represented as a tuple, which is immutable and contains the title, author, year, and genre.
+Data Structures:
 
-    3. **Sets**:
-        - `genres`: A set of unique genres available in the library. Sets are used to ensure that each genre is unique.
+1. Lists: To store collections of books and users.
+2. Tuples: To store immutable book details.
+3. Sets: To manage unique genres.
+4. Dictionaries: To map book titles to their details and manage user checkouts.
 
-    4. **Dictionaries**:
-        - `library_catalog`: A dictionary that maps book titles to their details (author, year, genre).
-        - `user_checkouts`: A dictionary that maps users to the list of books they have checked out.
+List of books in the library with genres:
+books = [
+    ("The Great Gatsby", "F. Scott Fitzgerald", 1925, "Classic"),
+    ("To Kill a Mockingbird", "Harper Lee", 1960, "Fiction"),
+    ...
+]
 
-    5. **Functions**:
-        - Various functions to manage the library system, including checking out and returning books, getting book details, 
-        listing books by author and genre, counting books by author, finding the index of a book, managing genres, sorting books, 
-        reversing the list of users, finding the maximum and minimum year of books, 
-        counting occurrences of an author, finding common and unique genres, updating book details, merging library catalogs, 
-        appending a new book, removing a user, clearing genres, 
-        getting all book titles, and clearing the library catalog.
+List of users:
+users = ["Alice", "Bob", "Charlie", "Diana"]
 
-    6. **Example Usage**:
-        This comprehensive example covers a wide range of common methods and operations for lists, tuples, sets, and dictionaries, 
-        providing a functional and logical library management system.
+Set of unique genres:
+genres = set()
+
+Adding genres from books:
+for book in books:
+    genres.add(book[3])
+
+Dictionary to map book titles to their details:
+library_catalog = {title: (author, year, genre) for title, author, year, genre in books}
+
+Dictionary to manage user checkouts:
+user_checkouts = {user: [] for user in users}
+
+Assign books to genres:
+for book in books:
+    genres.add(book[3])
+
+Functions:
+
+List-Related Methods:
+1. find_book_index(title): Finds the index of a book in the list.
+2. sort_books_by_year(): Sorts books by year.
+3. reverse_users(): Reverses the list of users.
+4. append_user(user): Appends a new user to the list.
+5. remove_user(user): Removes a user from the list.
+
+Tuple-Related Methods:
+1. find_max_min_year(): Finds the maximum and minimum year of books.
+
+Set-Related Methods:
+1. add_genre(genre): Adds a new genre.
+2. remove_genre(genre): Removes a genre.
+3. list_all_genres(): Lists all genres.
+4. find_common_genres(other_genres): Finds common genres between two sets.
+5. find_unique_genres(): Finds unique genres in the library.
+6. clear_genres(): Clears all genres.
+
+Dictionary-Related Methods:
+1. add_book(title, author, year, genre): Adds a new book to the library.
+2. remove_book(title): Removes a book from the library.
+3. get_book_details(title): Gets book details.
+4. list_books_by_author(author): Lists all books by an author.
+5. list_books_by_genre(genre): Lists all books in a genre.
+6. count_books_by_author(author): Counts books by an author.
+7. checkout_book(user, book_title): Checks out a book to a user.
+8. return_book(user, book_title): Returns a book from a user.
+9. update_book_details(title, new_details): Updates book details.
+10. merge_library_catalogs(other_catalog): Merges two library catalogs.
+11. get_all_book_titles(): Gets all book titles.
+12. clear_library_catalog(): Clears the library catalog.
+
 """
 # List of books in the library with genres
 books = [
