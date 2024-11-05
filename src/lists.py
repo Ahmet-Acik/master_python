@@ -1,4 +1,5 @@
 # List creation
+
 empty_list = []
 print(f"empty_list: {empty_list}")
 grocery_list = ["milk", "bread", "eggs"]
