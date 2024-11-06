@@ -122,7 +122,7 @@ cube = get_power_function(3)
 print(f"square(5) {square(5)}") # 25
 print(f"cube(5) {cube(5)}") # 125
 
-# filter function
+# filter function returns a new list with the elements that satisfy the condition
 filter_list = lambda lst: [i for i in lst if i % 2 == 0]
 print(f"filter_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {filter_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])}") # [2, 4, 6, 8, 10]
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -137,7 +137,7 @@ filtered_dict = filter(lambda x: x[1].startswith("k"), my_dict.items())
 print(f"filtered_dict {dict(filtered_dict)}") # {4: 'kiwi'}
 
 
-# map function
+# map function transform each element in the list
 double_list = lambda lst: [i * 2 for i in lst]
 print(f"double_list([1, 2, 3, 4, 5]) {double_list([1, 2, 3, 4, 5])}") # [2, 4, 6, 8, 10]
 numbers = [1, 2, 3, 4, 5]
@@ -146,3 +146,94 @@ print(f"doubled_numbers {list(doubled_numbers)}") # [2, 4, 6, 8, 10]
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 uppercased_fruits = map(lambda x: x.upper(), fruits) 
 print(f"uppercased_fruits {list(uppercased_fruits)}") # ['APPLE', 'BANANA', 'CHERRY', 'KIWI', 'MANGO']
+
+my_dict = {1: "apple", 2: "banana", 3: "cherry", 4: "kiwi", 5: "mango"}
+uppercased_dict = map(lambda x: (x[0], x[1].upper()), my_dict.items())
+print(f"uppercased_dict {dict(uppercased_dict)}") # {1: 'APPLE', 2: 'BANANA', 3: 'CHERRY', 4: 'KIWI', 5: 'MANGO'}
+
+# reduce function
+from functools import reduce
+sum_list = lambda lst: reduce(lambda x, y: x + y, lst)
+print(f"sum_list([1, 2, 3, 4, 5]) {sum_list([1, 2, 3, 4, 5])}") # 15
+numbers = [1, 2, 3, 4, 5]
+sum_numbers = reduce(lambda x, y: x + y, numbers)
+print(f"sum_numbers {sum_numbers}") # 15
+product_list = lambda lst: reduce(lambda x, y: x * y, lst)
+print(f"product_list([1, 2, 3, 4, 5]) {product_list([1, 2, 3, 4, 5])}") # 120
+numbers = [1, 2, 3, 4, 5]
+product_numbers = reduce(lambda x, y: x * y, numbers)
+print(f"product_numbers {product_numbers}") # 120
+
+# partial function
+from functools import partial
+def power(base, exponent):
+    return base ** exponent
+
+square = partial(power, exponent=2)
+cube = partial(power, exponent=3)
+
+print(f"square(5) {square(5)}") # 25
+print(f"cube(5) {cube(5)}") # 125
+
+# closure
+def outer_function(x):
+    def inner_function(y):
+        return x + y
+    return inner_function
+
+add_5 = outer_function(5)
+add_10 = outer_function(10)
+
+print(f"add_5(10) {add_5(10)}") # 15
+print(f"add_10(10) {add_10(10)}") # 20
+
+# decorator
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+def say_hello():
+    print("Hello!")
+    
+say_hello = my_decorator(say_hello)
+say_hello()
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+    
+say_hello()
+
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Something is happening before the function is called.")
+        result = func(*args, **kwargs)
+        print("Something is happening after the function is called.")
+        return result
+    return wrapper
+
+@my_decorator
+def say_hello(name):
+    print(f"Hello {name}!")
+    
+say_hello("Ahmet")
+
+# decorator with arguments
+def repeat(num_times):
+    def decorator_repeat(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(num_times):
+                result = func(*args, **kwargs)
+            return result
+        return wrapper
+    return decorator_repeat
+
+@repeat(num_times=3)
+def greet(name):
+    print(f"Hello {name}!")
+    
+greet("Ahmet")
+
