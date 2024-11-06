@@ -71,3 +71,78 @@ print(result) # None, the function does not return anything explicitly
 
 say_hello = greeting
 print(say_hello("Mehmet")) # Hello Ahmet!
+
+# Function as an argument
+def apply_func(func, value):
+    return func(value)
+
+def square(x):
+    return x ** 2
+
+def cube(x):
+    return x ** 3
+
+def double(x):
+    return x * 2
+
+
+print(f"apply_func(cube) {apply_func(cube, 5)}") # 125
+print(f"apply_func(square) {apply_func(square, 5)}") # 25
+print(f"apply_func(double) {apply_func(double, 5)}") # 10
+
+# lambda function
+
+add =lambda x,y,z: x+y+z
+print(f"add(1,2,3) {add(1,2,3)}") # 6
+
+even = lambda x:x%2==0
+print(f"even(5) {even(5)}") # False
+print(f"even(10) {even(10)}") # True
+
+odd = lambda x:x%2!=0
+print(f"odd(5) {odd(5)}") # True
+print(f"odd(10) {odd(10)}") # False
+
+
+# lambda function as an argument
+def apply_func(func, value):
+    return func(value)
+
+print(f"apply_func(lambda x: x ** 2, 5) {apply_func(lambda x: x ** 2, 5)}") # 25
+print(f"apply_func(lambda x: x ** 3, 5) {apply_func(lambda x: x ** 3, 5)}") # 125
+print(f"apply_func(lambda x: x * 2, 5) {apply_func(lambda x: x * 2, 5)}") # 10
+
+# lambda function as a return value
+def get_power_function(n):
+    return lambda x: x ** n
+
+square = get_power_function(2)
+cube = get_power_function(3)
+
+print(f"square(5) {square(5)}") # 25
+print(f"cube(5) {cube(5)}") # 125
+
+# filter function
+filter_list = lambda lst: [i for i in lst if i % 2 == 0]
+print(f"filter_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {filter_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])}") # [2, 4, 6, 8, 10]
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = filter(lambda x:x%2==0, numbers)
+print(f"even_numbers {list(even_numbers)}") # [2, 4, 6, 8, 10]
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+filtered_fruits = filter(lambda x: x.startswith("a"), fruits)
+print(f"filtered_fruits {list(filtered_fruits)}") # ['apple']
+
+my_dict = {1: "apple", 2: "banana", 3: "cherry", 4: "kiwi", 5: "mango"}
+filtered_dict = filter(lambda x: x[1].startswith("k"), my_dict.items())
+print(f"filtered_dict {dict(filtered_dict)}") # {4: 'kiwi'}
+
+
+# map function
+double_list = lambda lst: [i * 2 for i in lst]
+print(f"double_list([1, 2, 3, 4, 5]) {double_list([1, 2, 3, 4, 5])}") # [2, 4, 6, 8, 10]
+numbers = [1, 2, 3, 4, 5]
+doubled_numbers = map(lambda x: x * 2, numbers)
+print(f"doubled_numbers {list(doubled_numbers)}") # [2, 4, 6, 8, 10]
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+uppercased_fruits = map(lambda x: x.upper(), fruits) 
+print(f"uppercased_fruits {list(uppercased_fruits)}") # ['APPLE', 'BANANA', 'CHERRY', 'KIWI', 'MANGO']
