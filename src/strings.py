@@ -175,6 +175,95 @@ def string_methods(name):
     }
 
 
+def check_string_methods():
+    my_string = "Hello, world!"
+    
+    print("check_string_methods\n")
+    # Using if conditions
+    if my_string.startswith("Hello"):
+        print("The string starts with 'Hello'")
+    if my_string.endswith("world!"):
+        print("The string ends with 'world!'")
+    if my_string.isalpha():
+        print("The string contains only alphabetic characters")
+    if my_string.isdigit():
+        print("The string contains only digits")
+    if my_string.isalnum():
+        print("The string contains only alphanumeric characters")
+    if my_string.isspace():
+        print("The string contains only whitespace characters")
+    if my_string.islower():
+        print("The string contains only lowercase characters")
+    if my_string.isupper():
+        print("The string contains only uppercase characters")
+    if my_string.find("world") != -1:
+        print("The substring 'world' is found in the string")
+    if my_string.count("Hello") > 1:
+        print("The substring 'Hello' appears more than once")
+
+    # Using map
+    # str.upper():
+    strings = ["hello", "world", "python"]
+    upper_strings = list(map(str.upper, strings))
+    print(upper_strings)  # Output: ['HELLO', 'WORLD', 'PYTHON']
+
+    # str.lower():
+    strings = ["HELLO", "WORLD", "PYTHON"]
+    lower_strings = list(map(str.lower, strings))
+    print(lower_strings)  # Output: ['hello', 'world', 'python']
+    
+    # str.strip():
+    strings = ["  hello  ", "  world  ", "  python  "]
+    stripped_strings = list(map(str.strip, strings))
+    print(stripped_strings)  # Output: ['hello', 'world', 'python']
+   
+    # str.replace(old, new):
+    strings = ["hello world", "world of python"]
+    replaced_strings = list(map(lambda s: s.replace("world", "universe"), strings))
+    print(replaced_strings)  # Output: ['hello universe', 'universe of python']
+   
+    # Using filter
+    # str.isdigit():
+    strings = ["hello", "123", "world", "456"]
+    digit_strings = list(filter(str.isdigit, strings))
+    print(digit_strings)  # Output: ['123', '456']
+    
+    # str.endswith(suffix):
+    strings = ["hello.py", "world.txt", "script.py", "data.csv"]
+    py_files = list(filter(lambda s: s.endswith(".py"), strings))
+    print(py_files)  # Output: ['hello.py', 'script.py']
+    
+    # str.isalpha():
+    strings = ["hello", "123", "world", "456"]
+    alpha_strings = list(filter(str.isalpha, strings))
+    print(alpha_strings)  # Output: ['hello', 'world']
+    
+    # str.startswith(prefix):
+    strings = ["apple", "banana", "apricot", "cherry"]
+    a_strings = list(filter(lambda s: s.startswith("a"), strings))
+    print(a_strings)  # Output: ['apple', 'apricot']
+
+    # Using reduce
+    
+    from functools import reduce
+    strings = ["hello", "world", "python"]
+    concatenated_string = reduce(lambda x, y: x + " " + y, strings)
+    print(concatenated_string)  # Output: 'hello world python'
+    
+    
+    strings = ["hello", "world", "pythonista"]
+    longest_string = reduce(lambda x, y: x if len(x) > len(y) else y, strings)
+    print(longest_string)  # Output: 'pythonista'
+    
+    
+    strings = ["hello", "world", "python"]
+    total_characters = reduce(lambda x, y: x + len(y), strings, 0)
+    print(total_characters)  # Output: 16
+
+check_string_methods()
+
+
+
 if __name__ == "__main__":
     print(declare_and_assign())
     print(concatenate_strings("Hello", "World"))
