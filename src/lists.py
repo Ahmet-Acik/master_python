@@ -28,17 +28,17 @@ repeated_fruit_list = fruit_list * 2
 print(f"repeated_fruit_list: {repeated_fruit_list}")
 
 # List slicing
-print(f"fruit_list[1:3]: {fruit_list[1:3]}")
-print(f"fruit_list[:2]: {fruit_list[:2]}")
-print(f"fruit_list[1:]: {fruit_list[1:]}")
+print(f"fruit_list[1:3]: {fruit_list[1:3]}") 
+print(f"fruit_list[:2]: {fruit_list[:2]}")   
+print(f"fruit_list[1:]: {fruit_list[1:]}")  
 print(f"fruit_list[:]: {fruit_list[:]}")
 print(f"fruit_list[::2]: {fruit_list[::2]}")
 print(f"fruit_list[::-1]: {fruit_list[::-1]}")
 
 # List comprehensions
-squares = [x**2 for x in range(1, 6)]
-even_numbers = [x for x in range(1, 11) if x % 2 == 0]
-odd_numbers = [x for x in range(1, 11) if x % 2 != 0]
+squares = [x**2 for x in range(1, 6)]  # [1, 4, 9, 16, 25]
+even_numbers = [x for x in range(1, 11) if x % 2 == 0] # [2, 4, 6, 8, 10]
+odd_numbers = [x for x in range(1, 11) if x % 2 != 0] # [1, 3, 5, 7, 9]
 
 # Print results
 print(f"grocery_list: {grocery_list}")
