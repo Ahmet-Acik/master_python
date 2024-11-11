@@ -1,4 +1,185 @@
 # src/loops.py
+# while loop
+# The while loop executes a block of code as long as the specified condition is true.
+i = 1
+while i < 8:
+    print(f"i: {i}")
+    i += 1  # Increment the value of i by 1 in each iteration.
+
+# The break statement is used to exit the loop.
+i = 1
+while i < 10:
+    print(f"i: {i}")
+    if i == 3:
+        break  # Exit the loop when i is equal to 3.
+    i += 1
+
+# The continue statement is used to skip the current iteration and continue with the next iteration.
+i = 0
+while i < 5:
+    i += 1
+    if i == 3:
+        continue  # Skip the iteration when i is equal to 3.
+    print(f"i: {i}")
+
+# The else block is executed when the condition in the while loop becomes false.
+i = 1
+while i < 5:
+    print(f"i: {i}")
+    i += 1
+else:
+    print("i is no longer less than 5.")
+
+
+# loop examples
+# The range() function generates a sequence of numbers from the start value to the end value.
+for number in range(1, 6):
+    print(f"number: {number}")  # Output: 1 2 3 4 5
+
+# The range() function can also take a step argument to generate numbers with a specific step value.
+for number in range(1, 10, 2):
+    print(f"number: {number}")  # Output: 1 3 5 7 9
+
+# The range() function can also generate numbers in descending order.
+for number in range(5, 0, -1):
+    print(f"number: {number}")  # Output: 5 4 3 2 1
+
+# The for loop can also iterate over a list of items.
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(f"fruit: {fruit}")  # Output: apple banana cherry
+
+# The for loop can also iterate over a tuple of items.
+fruits = ("apple", "banana", "cherry", "mango", "orange")
+for fruit in fruits:
+    print(f"fruit: {fruit}")  # Output: apple banana cherry mango orange
+
+# The for loop can also iterate over a string.
+for letter in "Ahmet":
+    print(f"letter: {letter}")  # Output: A h m e t
+
+# The for loop can also iterate over a dictionary.
+person = {"name": "Ahmet", "age": 21, "city": "Istanbul"}
+for key, value in person.items():
+    print(f"{key}: {value}")  # Output: name Ahmet age 21 city Istanbul
+
+# The for loop can also iterate over a set.
+fruits = {"apple", "banana", "cherry", "mango", "orange"}
+for fruit in fruits:
+    print(f"fruit: {fruit}")  # Output: apple banana cherry mango orange
+
+# while loop
+# The while loop executes a block of code as long as the specified condition is true.
+i = 1
+while i < 8:
+    print(f"i: {i}")
+    i += 1  # Increment the value of i by 1 in each iteration.
+
+
+# The break statement is used to exit the loop.
+i = 1
+while i < 10:
+    print(f"i: {i}")
+    if i == 3:
+        break  # Exit the loop when i is equal to 3.
+    i += 1
+
+
+# The continue statement is used to skip the current iteration and continue with the next iteration.
+i = 0
+while i < 5:
+    i += 1
+    if i == 3:
+        continue  # Skip the iteration when i is equal to 3.
+    print(f"i: {i}")
+
+# The else block is executed when the condition in the while loop becomes false.
+i = 1
+while i < 5:
+    print(f"i: {i}")
+    i += 1
+else:
+    print("i is no longer less than 5.")
+
+# Nested loops
+# You can use one or more loops inside another loop.
+for i in range(3):
+    for j in range(2):
+        print(f"i: {i}, j: {j}")
+
+# The pass statement is used as a placeholder when a statement is required syntactically but you do not want any command or code to execute.
+for i in range(5):
+    pass  # Do nothing.
+
+
+# The pass statement is also used for empty functions.
+def my_function():
+    pass  # Do nothing.
+
+
+# The pass statement is also used for empty loops.
+for i in range(5):
+    pass  # Do nothing.
+
+# The enumerate() function adds a counter to an iterable and returns it as an enumerate object.
+fruits = ["apple", "banana", "cherry", "mango", "orange"]
+for index, fruit in enumerate(fruits):
+    print(f"index: {index}, fruit: {fruit}")
+
+# The zip() function returns an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator is paired together, etc.
+fruits = ["apple", "banana", "cherry"]
+colors = ["red", "yellow", "pink"]
+for fruit, color in zip(fruits, colors):
+    print(f"fruit: {fruit}, color: {color}")
+
+# The reversed() function returns an iterator that accesses the given sequence in the reverse order.
+fruits = ["apple", "banana", "cherry"]
+for fruit in reversed(fruits):
+    print(f"fruit: {fruit}")
+
+# The sorted() function returns a new sorted list from the elements of any iterable.
+fruits = ["apple", "banana", "cherry"]
+for fruit in sorted(fruits):
+    print(f"fruit: {fruit}")
+
+# The sorted() function can also take a reverse argument to sort the list in descending order.
+fruits = ["apple", "banana", "cherry"]
+for fruit in sorted(fruits, reverse=True):
+    print(f"fruit: {fruit}")
+
+# The sorted() function can also take a key argument to specify a function to be called on each list element before making comparisons.
+fruits = ["apple", "strawberry", "banana", "cherry"]
+for fruit in sorted(fruits, key=len):
+    print(f"fruit: {fruit}")
+
+# do-while loop
+# Python does not have a built-in do-while loop, but you can create one using a while loop.
+i = 0
+while True:
+    print(f"i: {i}")
+    i += 1
+    if i == 5:
+        break
+
+count = 10
+while count > 0:
+    print(f"count: {count}")
+    count -= 1
+else:
+    print("Count is no longer greater than 0.")
+
+# loop control statements
+# The break statement is used to exit the loop.
+for i in range(5):
+    if i == 3:
+        break  # Exit the loop when i is equal to 3.
+    print(f"i: {i}")
+
+# The continue statement is used to skip the current iteration and continue with the next iteration.
+for i in range(5):
+    if i == 3:
+        continue  # Skip the iteration when i is equal to 3.
+    print(f"i: {i}")
 
 
 def range_sequence(start, end, step=1):
@@ -151,25 +332,41 @@ def while_loop_with_else_example(start):
 
 
 if __name__ == "__main__":
-        # Example usage of the functions
+    # Example usage of the functions
     print(f"range_sequence(1, 6): {range_sequence(1, 6)}")
-    print(f"iterate_list(['apple', 'banana', 'cherry']): {iterate_list(['apple', 'banana', 'cherry'])}")
+    print(
+        f"iterate_list(['apple', 'banana', 'cherry']): {iterate_list(['apple', 'banana', 'cherry'])}"
+    )
     print(f"iterate_string('Ahmet'): {iterate_string('Ahmet')}")
-    print(f"iterate_dict({{'name': 'Ahmet', 'age': 21, 'city': 'Istanbul'}}): {iterate_dict({'name': 'Ahmet', 'age': 21, 'city': 'Istanbul'})}")
+    print(
+        f"iterate_dict({{'name': 'Ahmet', 'age': 21, 'city': 'Istanbul'}}): {iterate_dict({'name': 'Ahmet', 'age': 21, 'city': 'Istanbul'})}"
+    )
     print(f"while_loop_example(8): {while_loop_example(8)}")
     print(f"while_loop_with_break(10): {while_loop_with_break(10)}")
     print(f"while_loop_with_continue(5): {while_loop_with_continue(5)}")
     print(f"while_loop_with_else(5): {while_loop_with_else(5)}")
     print(f"nested_loops(3, 2): {nested_loops(3, 2)}")
-    print(f"enumerate_example(['apple', 'banana', 'cherry']): {enumerate_example(['apple', 'banana', 'cherry'])}")
-    print(f"zip_example(['apple', 'banana', 'cherry'], ['red', 'yellow', 'pink']): {zip_example(['apple', 'banana', 'cherry'], ['red', 'yellow', 'pink'])}")
-    print(f"reversed_example(['apple', 'banana', 'cherry']): {reversed_example(['apple', 'banana', 'cherry'])}")
-    print(f"sorted_example(['apple', 'banana', 'cherry']): {sorted_example(['apple', 'banana', 'cherry'])}")
-    print(f"sorted_example(['apple', 'banana', 'cherry'], reverse=True): {sorted_example(['apple', 'banana', 'cherry'], reverse=True)}")
-    print(f"sorted_example(['apple', 'strawberry', 'banana', 'cherry'], key=len): {sorted_example(['apple', 'strawberry', 'banana', 'cherry'], key=len)}")
+    print(
+        f"enumerate_example(['apple', 'banana', 'cherry']): {enumerate_example(['apple', 'banana', 'cherry'])}"
+    )
+    print(
+        f"zip_example(['apple', 'banana', 'cherry'], ['red', 'yellow', 'pink']): {zip_example(['apple', 'banana', 'cherry'], ['red', 'yellow', 'pink'])}"
+    )
+    print(
+        f"reversed_example(['apple', 'banana', 'cherry']): {reversed_example(['apple', 'banana', 'cherry'])}"
+    )
+    print(
+        f"sorted_example(['apple', 'banana', 'cherry']): {sorted_example(['apple', 'banana', 'cherry'])}"
+    )
+    print(
+        f"sorted_example(['apple', 'banana', 'cherry'], reverse=True): {sorted_example(['apple', 'banana', 'cherry'], reverse=True)}"
+    )
+    print(
+        f"sorted_example(['apple', 'strawberry', 'banana', 'cherry'], key=len): {sorted_example(['apple', 'strawberry', 'banana', 'cherry'], key=len)}"
+    )
     print(f"do_while_example(5): {do_while_example(5)}")
     print(f"while_loop_with_else_example(10): {while_loop_with_else_example(10)}")
-    
+
     # The range() function generates a sequence of numbers from the start value to the end value.
     for number in range(1, 6):
         print(f"number: {number}")  # Output: 1 2 3 4 5
