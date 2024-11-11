@@ -5,6 +5,19 @@ print(f"empty_list: {empty_list}")
 grocery_list = ["milk", "bread", "eggs"]
 print(f"grocery_list: {grocery_list}")
 
+# list creation with list() function
+number_list = list(range(1, 6))
+print(f"number_list: {number_list}")
+letters_list = list("Python")
+print(f"letters_list: {letters_list}")
+nested_list = list([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(f"nested_list: {nested_list}")
+# list creation from tuple and set
+tuple_list = list(("P", "y", "t", "h", "o", "n"))
+print(f"tuple_list: {tuple_list}")
+set_list = list({"apple", "banana", "cherry"})
+print(f"set_list: {set_list}")
+
 # List methods
 grocery_list.append("butter")
 print(f"grocery_list append('butter' :){grocery_list}")
@@ -28,17 +41,17 @@ repeated_fruit_list = fruit_list * 2
 print(f"repeated_fruit_list: {repeated_fruit_list}")
 
 # List slicing
-print(f"fruit_list[1:3]: {fruit_list[1:3]}") 
-print(f"fruit_list[:2]: {fruit_list[:2]}")   
-print(f"fruit_list[1:]: {fruit_list[1:]}")  
+print(f"fruit_list[1:3]: {fruit_list[1:3]}")
+print(f"fruit_list[:2]: {fruit_list[:2]}")
+print(f"fruit_list[1:]: {fruit_list[1:]}")
 print(f"fruit_list[:]: {fruit_list[:]}")
 print(f"fruit_list[::2]: {fruit_list[::2]}")
 print(f"fruit_list[::-1]: {fruit_list[::-1]}")
 
 # List comprehensions
 squares = [x**2 for x in range(1, 6)]  # [1, 4, 9, 16, 25]
-even_numbers = [x for x in range(1, 11) if x % 2 == 0] # [2, 4, 6, 8, 10]
-odd_numbers = [x for x in range(1, 11) if x % 2 != 0] # [1, 3, 5, 7, 9]
+even_numbers = [x for x in range(1, 11) if x % 2 == 0]  # [2, 4, 6, 8, 10]
+odd_numbers = [x for x in range(1, 11) if x % 2 != 0]  # [1, 3, 5, 7, 9]
 
 # Print results
 print(f"grocery_list: {grocery_list}")
@@ -69,7 +82,9 @@ print(f"number_list2: {number_list2}")  # Output: [0, 2, 4]
 
 # list() function creates a list from an iterable.
 letters_list = list("Python")  # ['P', 'y', 't', 'h', 'o', 'n'] # string
-letters_list2 = list(("P", "y", "t", "h", "o", "n"))  # ['P', 'y', 't', 'h', 'o', 'n'] # tuple
+letters_list2 = list(
+    ("P", "y", "t", "h", "o", "n")
+)  # ['P', 'y', 't', 'h', 'o', 'n'] # tuple
 print(f"letters_list: {letters_list}")
 print(f"letters_list2: {letters_list2}")
 
@@ -77,8 +92,9 @@ print(f"letters_list2: {letters_list2}")
 nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 nested_list2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
 print(f"nested_list: {nested_list}")  # [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-print(f"nested_list2: {nested_list2}")  # [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
-
+print(
+    f"nested_list2: {nested_list2}"
+)  # [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
 
 # indexing starts from 0 and negative indexing starts from -1
 print(f"shopping_list[0]: {shopping_list[0]}")  # apple
@@ -103,42 +119,65 @@ print(f"shopping_list[::-1]: {shopping_list[::-1]}")  # ['cherry', 'banana', 'ap
 
 # list modification
 new_fruit_list = ["mango", "orange", "grape", "kiwi"]
-print(f"new_fruit_list before modification: {new_fruit_list}")  # ['mango', 'orange', 'grape', 'kiwi']
+print(
+    f"new_fruit_list before modification: {new_fruit_list}"
+)  # ['mango', 'orange', 'grape', 'kiwi']
 new_fruit_list[1] = "strawberry"
-print(f"new_fruit_list after modification: {new_fruit_list}")  # ['mango', 'strawberry', 'grape', 'kiwi']
+print(
+    f"new_fruit_list after modification: {new_fruit_list}"
+)  # ['mango', 'strawberry', 'grape', 'kiwi']
 
 # list modification with slicing
-new_fruit_list[1:3] = ["blueberry", "blackberry"] # ['mango', 'blueberry', 'blackberry', 'kiwi']
-print(f"new_fruit_list after modification with slicing: {new_fruit_list}") # ['mango', 'blueberry', 'blackberry', 'kiwi']
+new_fruit_list[1:3] = [
+    "blueberry",
+    "blackberry",
+]  # ['mango', 'blueberry', 'blackberry', 'kiwi']
+print(
+    f"new_fruit_list after modification with slicing: {new_fruit_list}"
+)  # ['mango', 'blueberry', 'blackberry', 'kiwi']
 
 new_numbers_list = [1, 2, 3, 4, 5]
 print(f"new_numbers_list before modification: {new_numbers_list}")  # [1, 2, 3, 4, 5]
-new_numbers_list[2:4] = [6, 7, 8] # [1, 2, 6, 7, 8, 5]
-print(f"new_numbers_list after modification with slicing: {new_numbers_list}") # [1, 2, 6, 7, 8, 5]
+new_numbers_list[2:4] = [6, 7, 8]  # [1, 2, 6, 7, 8, 5]
+print(
+    f"new_numbers_list after modification with slicing: {new_numbers_list}"
+)  # [1, 2, 6, 7, 8, 5]
 
 new_letters_list = ["P", "y", "t", "h", "o", "n"]
-print(f"new_letters_list before modification: {new_letters_list}")  # ['P', 'y', 't', 'h', 'o', 'n']
-new_letters_list[2:5] = ["Y", "T"] # ['P', 'y', 'Y', 'T', 'n']
-print(f"new_letters_list after modification with slicing: {new_letters_list}") # ['P', 'y', 'Y', 'T', 'n']
+print(
+    f"new_letters_list before modification: {new_letters_list}"
+)  # ['P', 'y', 't', 'h', 'o', 'n']
+new_letters_list[2:5] = ["Y", "T"]  # ['P', 'y', 'Y', 'T', 'n']
+print(
+    f"new_letters_list after modification with slicing: {new_letters_list}"
+)  # ['P', 'y', 'Y', 'T', 'n']
 
 # list modification with slicing and step
 new_numbers_list = [1, 2, 3, 4, 5, 6]
 new_numbers_list[::2] = [10, 20, 30]  # [10, 2, 20, 4, 30, 6]
-print(f"new_numbers_list after modification with slicing and step: {new_numbers_list}")  # [10, 2, 20, 4, 30, 6]
+print(
+    f"new_numbers_list after modification with slicing and step: {new_numbers_list}"
+)  # [10, 2, 20, 4, 30, 6]
 
 # list modification with negative step
 new_numbers_list[::-1] = [60, 50, 40, 30, 20, 10]  # [10, 20, 30, 40, 50, 60]
-print(f"new_numbers_list after modification with negative step: {new_numbers_list}")  # [10, 20, 30, 40, 50, 60]
+print(
+    f"new_numbers_list after modification with negative step: {new_numbers_list}"
+)  # [10, 20, 30, 40, 50, 60]
 
 # list concatenation, + operator combines two lists, and returns a new list.
 fruits = ["apple", "banana", "cherry", "mango", "orange"]
 colors = ["red", "yellow", "pink"]
 fruits_colors = fruits + colors
-print(f"fruits_colors: {fruits_colors}")  # ['apple', 'banana', 'cherry', 'mango', 'orange', 'red', 'yellow', 'pink']
+print(
+    f"fruits_colors: {fruits_colors}"
+)  # ['apple', 'banana', 'cherry', 'mango', 'orange', 'red', 'yellow', 'pink']
 
 # list repetition * operator repeats a list, and returns a new list, here fruits list is repeated 2 times.
 repeated_fruits = fruits * 2
-print(f"repeated_fruits: {repeated_fruits}")  # ['apple', 'banana', 'cherry', 'mango', 'orange', 'apple', 'banana', 'cherry', 'mango', 'orange']
+print(
+    f"repeated_fruits: {repeated_fruits}"
+)  # ['apple', 'banana', 'cherry', 'mango', 'orange', 'apple', 'banana', 'cherry', 'mango', 'orange']
 
 # len() function returns the number of elements in the list.
 print(f"len(fruits): {len(fruits)}")  # 5
@@ -176,24 +215,34 @@ print(f"fruits_copy: {fruits_copy}")  # ['apple', 'banana', 'cherry', 'mango', '
 
 # append() method adds an element to the end of the list, it modifies the original list.
 shopping_list.append("date")
-print(f"shopping_list after append: {shopping_list}")  # ['apple', 'banana', 'cherry', 'date']
+print(
+    f"shopping_list after append: {shopping_list}"
+)  # ['apple', 'banana', 'cherry', 'date']
 
 # insert() method adds an element at the specified index, it modifies the original list.
 shopping_list.insert(1, "grape")
-print(f"shopping_list after insert: {shopping_list}")  # ['apple', 'grape', 'banana', 'cherry', 'date']
+print(
+    f"shopping_list after insert: {shopping_list}"
+)  # ['apple', 'grape', 'banana', 'cherry', 'date']
 
 # extend() method adds elements of an iterable to the end of the list, it modifies the original list.
 shopping_list.extend(["kiwi", "mango"])
-print(f"shopping_list after extend: {shopping_list}")  # ['apple', 'grape', 'banana', 'cherry', 'date', 'kiwi', 'mango']
+print(
+    f"shopping_list after extend: {shopping_list}"
+)  # ['apple', 'grape', 'banana', 'cherry', 'date', 'kiwi', 'mango']
 
 # remove() method removes the first occurrence of the specified element, it modifies the original list.
 shopping_list.remove("grape")
-print(f"shopping_list after remove: {shopping_list}")  # ['apple', 'banana', 'cherry', 'date', 'kiwi', 'mango']
+print(
+    f"shopping_list after remove: {shopping_list}"
+)  # ['apple', 'banana', 'cherry', 'date', 'kiwi', 'mango']
 
 # pop() method removes the element at the specified index, and returns it, it modifies the original list.
 popped_item = shopping_list.pop(1)
 print(f"popped_item: {popped_item}")  # banana
-print(f"shopping_list after pop: {shopping_list}")  # ['apple', 'cherry', 'date', 'kiwi', 'mango']
+print(
+    f"shopping_list after pop: {shopping_list}"
+)  # ['apple', 'cherry', 'date', 'kiwi', 'mango']
 
 # del keyword removes the element at the specified index, it modifies the original list.
 del shopping_list[1]
@@ -204,11 +253,15 @@ shopping_list.clear()
 print(f"shopping_list after clear: {shopping_list}")  # []
 
 shopping_list.extend(["apple", "grape", "banana", "cherry", "date", "kiwi", "mango"])
-print(f"shopping_list after extend: {shopping_list}")  # ['apple', 'grape', 'banana', 'cherry', 'date', 'kiwi', 'mango']
+print(
+    f"shopping_list after extend: {shopping_list}"
+)  # ['apple', 'grape', 'banana', 'cherry', 'date', 'kiwi', 'mango']
 
 # reverse() method reverses the order of the list, it modifies the original list.
 shopping_list.reverse()
-print(f"shopping_list after reverse: {shopping_list}")  # ['mango', 'kiwi', 'date', 'cherry', 'banana', 'grape', 'apple']
+print(
+    f"shopping_list after reverse: {shopping_list}"
+)  # ['mango', 'kiwi', 'date', 'cherry', 'banana', 'grape', 'apple']
 
 # count() method returns the number of elements with the specified value in the list.
 print(f"fruits.count('apple'): {fruits.count('apple')}")  # 1
