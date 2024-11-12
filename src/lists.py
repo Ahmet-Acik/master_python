@@ -18,7 +18,7 @@ print(f"tuple_list: {tuple_list}")
 set_list = list({"apple", "banana", "cherry"})
 print(f"set_list: {set_list}")
 
-# list comprehension
+# Create list with List comprehension 
 # Create a list of squares
 squares = [x**2 for x in range(10)]
 print(f"Create a list of squares ; {squares}")
