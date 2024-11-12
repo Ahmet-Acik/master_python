@@ -18,6 +18,58 @@ print(f"tuple_list: {tuple_list}")
 set_list = list({"apple", "banana", "cherry"})
 print(f"set_list: {set_list}")
 
+# list comprehension
+# Create a list of squares
+squares = [x**2 for x in range(10)]
+print(f"Create a list of squares ; {squares}")
+
+# List Comprehension with Condition
+# Create a list of even numbers
+evens = [x for x in range(10) if x % 2 == 0]
+print(f"Create a list of even numbers : {evens}")
+
+odds = [x for x in range(10) if x % 2 != 0]
+print(f"Create a list of odd numbers : {odds}")
+
+# Nested List Comprehension
+# Flatten a 2D list
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for row in matrix for num in row]
+print(f"Flatten a 2D list : {flattened}")
+
+# Apply a function to each element
+def square(x):
+    return x**2
+
+squares = [square(x) for x in range(10)]
+print(f"Apply a function to each element : {squares}")
+
+# List Comprehension with Multiple Conditions
+# Create a list of numbers divisible by both 2 and 3
+divisible_by_2_and_3 = [x for x in range(30) if x % 2 == 0 if x % 3 == 0]
+print(f"Create a list of numbers divisible by both 2 and 3 : {divisible_by_2_and_3}")
+
+# List Comprehension with Nested Loops
+# Create a list of tuples (x, y) where x is from 0-2 and y is from 0-2
+tuples = [(x, y) for x in range(3) for y in range(3)]
+print(f"Create a list of tuples (x, y) where x is from 0-2 and y is from 0-2 : {tuples}")
+
+# List Comprehension with String Manipulation
+# Create a list of characters from a string
+string = "Python"
+chars = [char for char in string]
+print(f"Create a list of characters from a string : {chars}")
+
+
+# List Comprehension with if-else
+# Classify numbers as even or odd
+def classify(x):
+    return f"even {x}" if x % 2 == 0 else f"odd {x}"
+
+classification = [classify(x) for x in range(10)]
+print(f"List Comprehension with if-else : {classification}") 
+
+
 # List methods
 grocery_list.append("butter")
 print(f"grocery_list append('butter' :){grocery_list}")
