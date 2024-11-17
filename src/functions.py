@@ -90,7 +90,8 @@ print(f"apply_func(cube) {apply_func(cube, 5)}") # 125
 print(f"apply_func(square) {apply_func(square, 5)}") # 25
 print(f"apply_func(double) {apply_func(double, 5)}") # 10
 
-# lambda function
+# lambda function 
+# syntax lambda arguments: expression e.g lambda x: x ** 2
 
 add =lambda x,y,z: x+y+z
 print(f"add(1,2,3) {add(1,2,3)}") # 6

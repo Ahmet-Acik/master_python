@@ -4,12 +4,87 @@
 
 # Creating tuples
 empty_tuple = ()
-single_element_tuple = (1,) 
+single_element_tuple = (1,)
 my_tuple = (1, 2, 3, 4, 5)
-heterogeneous_tuple = (1, "apple", 3.14, True)
 
-# Converting a list to a tuple
-list_to_tuple = tuple([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+a, b, c, d, e = my_tuple
+
+# print(a, b, c, d, e)
+
+heterogeneous_tuple = (1, "apple", 3.14, True)
+try:
+    heterogeneous_tuple[0] = 2
+    print(heterogeneous_tuple)
+except TypeError as e:
+    print(f"Error: {e}")
+
+a, b, c, d = heterogeneous_tuple
+
+colors = "red", "green", "blue"  # Parentheses are optional when defining a tuple
+number = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+print(type(colors))
+print(f"type(number) : {type(number)}")
+print(f"type(colors) : {type(colors)}")
+num = 1,
+print(f"type(num) : {type(num)}")
+strn = "hello",
+print(f"type(str) : {type(strn)}")
+
+my_list = [1, 2, 3, 4, 5] # list[]
+my_sety = {1, 2, 3, 4, 5} # set{}
+
+from collections import namedtuple
+
+Person = namedtuple("Person", ['name', 'age','city'])
+# print(f"person_tuple : {person_tuple}")
+
+p = Person( 1, 25, 3)
+print(p.name)
+print(p.age)
+print(p.city)
+
+# car = namedtuple("Car", ['make', 'model', 'year'])
+car = namedtuple("Car", ['make', 'model', 'year']) # namedtuple creation  namedtuple("", ['', '', ''])
+c = car("Toyota", "Corolla", 2021) # instance creation
+print(c.make)
+print(c.model)
+print(c.year)
+
+
+employee = namedtuple("employee",['id', 'name', 'salary'])
+emp1 = employee(1, "John", 1000)
+print(emp1.id)
+print(emp1.name)
+print(emp1.salary)
+
+
+
+print(heterogeneous_tuple.__add__((1, 2, 3, 4, 5)))
+
+
+number = tuple(x for x in range(20))
+print(f"number: {number}")
+
+print(tuple(x for x in range(20) if x % 2 == 0))
+print(tuple(x for x in range(20) if x % 2 == 1))
+print(tuple(x * 3 for x in range(20) if x % 2 == 0))
+print(list(x * 3 for x in range(20) if x % 2 == 0))
+print(set(x * 3 for x in range(20) if x % 2 == 0))
+
+print(tuple(x**2 for x in range (6) if x % 2 == 1))
+
+
+# # Converting a list to a tuple
+list_to_tuple = tuple([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+print(list_to_tuple[::])
+print(list_to_tuple[3:8])
+print(list_to_tuple[5:-2]) #
+print(list_to_tuple[::-1]) # reverse the tuple
+print(list_to_tuple[:])
+
+print(tuple([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
 
 # Converting a string to a tuple
 string_to_tuple = tuple("Hello World, from Python!")
@@ -39,17 +114,26 @@ print(f"x coordinate : {x}, y coordinate: {y}")
 my_generated_tupletwo = tuple(x * 2 for x in range(100) if x % 2 == 0)
 print(f"my_generated_tuple : {my_generated_tupletwo}")
 
+# comprehension syntax : (expression for item in iterable if condition)
+# Creating a tuple using a generator expression
+my_generated_tuplethree = tuple(x * 3 for x in range(100) if x % 2 == 1)
+
+number = tuple(x * 4 for x in range(20))
+
+
 # Creating a generator object (not a tuple)
 my_generated_tuplethree = (x * 3 for x in range(100) if x % 2 == 1)
-print(f"my_generated_tuple2 : {my_generated_tuplethree}")  # Output: my_generated_tuple2 : <generator object <genexpr> at 0x7f8b1c3b3d60>
+print(
+    f"my_generated_tuple2 : {my_generated_tuplethree}"
+)  # Output: my_generated_tuple2 : <generator object <genexpr> at 0x7f8b1c3b3d60>
 
-my_generated_tuple3 = tuple(
-    x * 3 for x in range(100) if x % 2 == 1
-)  
+my_generated_tuple3 = tuple(x * 3 for x in range(100) if x % 2 == 1)
 print(f"my_generated_tuple : {my_generated_tuple3}")
 
 my_generated_tuple2 = (x * 3 for x in range(100) if x % 2 == 1)
-print(f"my_generated_tuple2 : {my_generated_tuple2}") # Output: my_generated_tuple2 : <generator object <genexpr> at 0x7f8b1c3b3d60>
+print(
+    f"my_generated_tuple2 : {my_generated_tuple2}"
+)  # Output: my_generated_tuple2 : <generator object <genexpr> at 0x7f8b1c3b3d60>
 
 # Indexing: Access elements by index
 first_element = my_tuple[0]
@@ -70,7 +154,7 @@ repeated_tuple = my_tuple * 2
 is_in_tuple = 3 in my_tuple
 is_not_in_tuple = 6 not in my_tuple
 
-# Length: Get the number of elements in a tuple 
+# Length: Get the number of elements in a tuple
 tuple_length = len(my_tuple)
 
 # Count occurrences: Count the number of occurrences of an element in a tuple
@@ -89,6 +173,7 @@ def min_max(numbers):
 
 
 min_value, max_value = min_max(my_tuple)
+
 
 if __name__ == "__main__":
     print(f"empty_tuple: {empty_tuple}")
