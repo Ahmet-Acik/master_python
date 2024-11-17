@@ -9,7 +9,7 @@ my_tuple = (1, 2, 3, 4, 5)
 
 a, b, c, d, e = my_tuple
 
-# print(a, b, c, d, e)
+print(a, b, c, d, e)
 
 heterogeneous_tuple = (1, "apple", 3.14, True)
 try:
@@ -33,6 +33,93 @@ print(f"type(str) : {type(strn)}")
 my_list = [1, 2, 3, 4, 5] # list[]
 my_sety = {1, 2, 3, 4, 5} # set{}
 
+# Tuple Methods and Operations
+'''
+Common Tuple Methods and Operations
+    Indexing: Access elements by their index.
+    Slicing: Access a range of elements.
+    Concatenation: Combine two or more tuples.
+    Repetition: Repeat the elements of a tuple.
+    Membership: Check if an element is in a tuple.
+    Length: Get the number of elements in a tuple.
+    Count: Count the occurrences of a specific element.
+    Index: Find the index of the first occurrence of a specific element.
+    Unpacking: Assign elements of a tuple to multiple variables.
+    Returning Multiple Values: Return multiple values from a function using a tuple.
+'''
+# Creating tuples
+my_tuple = (1, 2, 3, 4, 5)
+
+# 1. Indexing
+my_tuple = (1, 2, 3, 4, 5)
+print(my_tuple[0])  # Output: 1
+print(my_tuple[2])  # Output: 3
+
+
+# 2. Slicing
+my_tuple = (1, 2, 3, 4, 5)
+print(my_tuple[1:3])  # Output: (2, 3)
+print(my_tuple[:3])   # Output: (1, 2, 3)
+print(my_tuple[3:])   # Output: (4, 5)
+
+
+# 3. Concatenation
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+combined_tuple = tuple1 + tuple2
+print(combined_tuple)  # Output: (1, 2, 3, 4, 5, 6)
+
+# 4. Repetition
+my_tuple = (1, 2, 3)
+repeated_tuple = my_tuple * 2
+print(repeated_tuple)  # Output: (1, 2, 3, 1, 2, 3)
+
+# 5. Membership
+my_tuple = (1, 2, 3, 4, 5)
+print(3 in my_tuple)   # Output: True
+print(6 in my_tuple)   # Output: False
+print(6 not in my_tuple)  # Output: True
+
+
+# 6. Length
+my_tuple = (1, 2, 3, 4, 5)
+print(len(my_tuple))  # Output: 5
+
+# 7. Count
+my_tuple = (1, 2, 3, 2, 4, 2, 5)
+print(my_tuple.count(2))  # Output: 3
+
+# 8. Index
+my_tuple = (1, 2, 3, 4, 5)
+print(my_tuple.index(3))  # Output: 2
+
+
+# 9. Unpacking
+my_tuple = (1, 2, 3, 4, 5)
+a, b, c, d, e = my_tuple
+print(a, b, c, d, e)  # Output: 1 2 3 4 5
+
+# 10. Returning Multiple Values
+def min_max(numbers):
+    return min(numbers), max(numbers)
+
+my_tuple = (1, 2, 3, 4, 5)
+min_value, max_value = min_max(my_tuple)
+print(min_value, max_value)  # Output: 1 5
+
+# Tuple Comprehension
+# Tuple comprehension is not directly supported in Python. However, you can use a generator expression to create a tuple.
+# Creating a tuple using a generator expression
+my_generated_tuple = tuple(x * 2 for x in range(100) if x % 2 == 0)
+print(my_generated_tuple)
+
+
+# Named Tuple
+# A named tuple is a tuple with named fields. It is similar to a struct in C or a record in Pascal.
+# Named tuples are defined using the namedtuple() function from the collections module.
+# Creating a named tuple syntax: namedtuple("name", [field1, field2, ...])
+
+# Syntax: namedtuple("name", [field1, field2, ...])
 from collections import namedtuple
 
 Person = namedtuple("Person", ['name', 'age','city'])
@@ -59,10 +146,10 @@ print(emp1.salary)
 
 
 
-print(heterogeneous_tuple.__add__((1, 2, 3, 4, 5)))
+print(heterogeneous_tuple.__add__((1, 2, 3, 4, 5))) # Output: (1, 'apple', 3.14, True, 1, 2, 3, 4, 5) new tuple
 
 
-number = tuple(x for x in range(20))
+number = tuple(x for x in range(20)) 
 print(f"number: {number}")
 
 print(tuple(x for x in range(20) if x % 2 == 0))
