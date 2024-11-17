@@ -43,3 +43,4 @@ print("Ahmet", "Ahmetoglu", "message", sep=" , ", end=".\n")  # sep and end para
 # """
 
 # print(info)
+
