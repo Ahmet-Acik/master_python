@@ -80,11 +80,16 @@
 #     print(f"Error, set does not include: {e}")
     
     
-age = 23
-my_dict ={'age': 23, "name": "Ahmet", "age": 25, "role": "Software Engineer"}
-print(f"my_dict : {my_dict}")
+# age = 23
+# my_dict ={'age': 23, "name": "Ahmet", "age": 25, "role": "Software Engineer"}
+# print(f"my_dict : {my_dict}")
 
-myD_employee = dict(my_dict)
+# myD_employee = dict(my_dict)
 
-myD_age = dict(age=23)
-print(f"myD_age : {myD_age}")
+# myD_age = dict(age=23)
+# print(f"myD_age : {myD_age}")
+import numpy as np
+
+np_mdarray = np.array([[[1, 2, 3], [4, 5, 6]]])
+
+print(f"np_mdarray: {np_mdarray}")  # np_mdarray: [[1 2 3]  [4 5 6]]
