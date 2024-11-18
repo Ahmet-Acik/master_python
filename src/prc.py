@@ -93,3 +93,19 @@ import numpy as np
 np_mdarray = np.array([[[1, 2, 3], [4, 5, 6]]])
 
 print(f"np_mdarray: {np_mdarray}")  # np_mdarray: [[1 2 3]  [4 5 6]]
+
+# try:
+#     my_set = {1, 2, 3, 4, 5}
+#     my_set.add(6,7,8,9,10)
+#     print(f"my_set after adding 6_10: {my_set}")  # output: {1, 2, 3, 4, 5, 6}
+# except TypeError as e:
+#     print(f"Error: {e}")
+
+my_set2 = {0, 2, 3, 4, 5}
+my_set2.add(3.5) # bool, int, float, str, tuple, frozenset
+# my_set2.update((6,7,8,9,10)) 
+# my_set2.update([6,7,8,9,10])
+my_set2.update({6,7,8,9,10}, [11, 12, 13], (14, 15, 16)) # add multiple itearables to the set
+print(f"my_set after adding 6_10: {my_set2}")
+
+  
