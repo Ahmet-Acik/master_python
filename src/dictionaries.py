@@ -9,6 +9,7 @@ print(f"myD_empty_dict : {myD_empty}")  # output: {}
 myD_numbers = {1: "one", 2: "two", 3: "three"}
 print(f"myD_numbers : {myD_numbers}")  # output: {1: 'one', 2: 'two', 3: 'three'}
 myD_list = [["four", 4], ["five", 5]]
+
 print(f"myD_List : {dict(myD_list)}")
 myD_tuple = ((6, "six"), (7, "seven"))
 print(f"myD_Tuple : {dict(myD_tuple)}")
@@ -67,6 +68,9 @@ my_list_lists = [["Jack", 25], ["Jane", 30], ["Josh", 35]]
 my_dict_form_list_lists = dict(my_list_lists)
 print(f"my_dict_form_list_lists : {my_dict_form_list_lists}") # output: {'Jack': 25, 'Jane': 30, 'Josh': 35}
 
+my_oneitem_list = [("Ahmet", 25)]
+my_dict_form_oneitem_list = dict(my_oneitem_list)
+print(f"my_dict_form_oneitem_list : {my_dict_form_oneitem_list}") # output: {'Ahmet': 25}
 
 character = {
     "name": "Ahmet",
@@ -77,6 +81,7 @@ character = {
 print(f"character : {character}") # output: {'name': 'Ahmet', 'age': 25, 'weight': 72.5, 'is_student': True} - Dictionary
 print(type(character)) # output: <class 'dict'> - Dictionary type
 
+# Dictionary methods
 # Accessing key-value pairs
 print(character["name"]) # output: Ahmet - Accessing value by key
 print(character["age"]) # output: 25 - Accessing value by key
@@ -85,7 +90,7 @@ print(character.get("height", "not found")) # output: not found - get() method r
 
 # Adding, updating, and removing key-value pairs
 # Adding a new key-value pair
-character["height"] = 175
+character["height"]["cm"] = 175, 68.9
 print(character) # output: {'name': 'Ahmet', 'age': 25, 'weight': 72.5, 'is_student': True, 'height': 175}
 
 # No add method in dictionary
