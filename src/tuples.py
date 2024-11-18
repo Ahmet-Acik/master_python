@@ -60,14 +60,14 @@ print(my_tuple[2])  # Output: 3
 my_tuple = (1, 2, 3, 4, 5)
 print(my_tuple[1:3])  # Output: (2, 3)
 print(my_tuple[:3])   # Output: (1, 2, 3)
-print(my_tuple[3:])   # Output: (4, 5)
+print(my_tuple[3::])  # Output: (4, 5)
 
 
 # 3. Concatenation
 tuple1 = (1, 2, 3)
 tuple2 = (4, 5, 6)
 combined_tuple = tuple1 + tuple2
-print(combined_tuple)  # Output: (1, 2, 3, 4, 5, 6)
+print(combined_tuple)  # Output: (1, 2, 3, 4, 5, 6) new tuple
 
 # 4. Repetition
 my_tuple = (1, 2, 3)

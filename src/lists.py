@@ -383,6 +383,7 @@ def get_penultimate_item(items):
 def get_items(items, start, end):
     return items[start:end]
 
+print(get_items(shopping_list,1,3)) # ['grape', 'banana']
 
 def get_items_from_start(items, end):
     return items[:end]

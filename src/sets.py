@@ -11,9 +11,9 @@ my_set.add(6)
 print(f"my_set after adding 6: {my_set}") # output: {1, 2, 3, 4, 5, 6}
 my_set.copy()
 print(f"my_set after copying: {my_set}") # output: {1, 2, 3, 4, 5, 6}
-my_set.discard(3)
+my_set.discard(3) # Removes the specified element from the set - Does not raise an error if the element is not found
 print(f"my_set after discarding 3: {my_set}") # output: {1, 2, 4, 5, 6}
-my_set.remove(4)
+my_set.remove(4) 
 print(f"my_set after removing 4: {my_set}") # output: {1, 2, 5, 6}
 my_set.pop()
 print(f"my_set after popping: {my_set}") # output: {2, 5, 6}
@@ -52,6 +52,7 @@ emails = ["abc@gmail.com", "def@gmail.com", "ghf@gmail.com", "abc@gmail.com", "x
 emails_set = set(emails)
 print(emails_set)  # 
 
+list(set(emails))  # Removes duplicates from the list
 
 # Creating sets
 empty_set = set()  # Empty set, with set constructor, not {}. {} is for empty dictionary
@@ -68,7 +69,7 @@ tuple_to_set = set((1,2,3,3,4,5,5,6,7,8,8,9,0,0)) # Duplicates are removed
 print(f"tuple_to_set: {tuple_to_set}")
 
 string_to_set = set("hello Python") # Duplicates are removed
-print(f"string_to_set: {string_to_set}")
+print(f"string_to_set: {string_to_set}") 
 
 valid_set = {1, "hello", 3, 4,( 5, 6), 7, 8, 9, 10} # Tuples are allowed
 print(f"valid_set: {valid_set}")
