@@ -68,6 +68,60 @@ fruits = {"apple", "banana", "cherry", "mango", "orange"}
 for fruit in fruits:
     print(f"fruit: {fruit}")  # Output: apple banana cherry mango orange
 
+
+### Example 1: Flattening a List of Lists
+# Suppose you have a list of lists of numbers and you want to flatten it into a single list of numbers.
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened_list = [num for sublist in nested_list for num in sublist]
+print(flattened_list)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+### Example 2: Filtering and Flattening a List of Lists
+# Suppose you have a list of lists of numbers and you want to flatten it into a single list of even numbers.
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+even_numbers = [num for sublist in nested_list for num in sublist if num % 2 == 0]
+print(even_numbers)  # Output: [2, 4, 6, 8]
+
+
+### Example 3: Extracting Specific Elements from a List of Dictionaries
+# Suppose you have a list of dictionaries representing students and their grades, 
+# and you want to extract the names of students who scored above 80.
+students = [
+    {"name": "Alice", "grade": 85},
+    {"name": "Bob", "grade": 75},
+    {"name": "Charlie", "grade": 90}
+]
+high_scorers = [student["name"] for student in students if student["grade"] > 80]
+print(high_scorers)  # Output: ['Alice', 'Charlie']
+
+
+### Example 4: Combining Two Lists with a Condition
+# Suppose you have two lists of numbers and 
+# you want to create a list of tuples containing pairs of numbers where the sum is even.
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+even_sum_pairs = [(x, y) for x in list1 for y in list2 if (x + y) % 2 == 0]
+print(even_sum_pairs)  # Output: [(1, 5), (2, 4), (3, 5)]
+
+
+### Example 5: Creating a List of Tuples from a Dictionary
+# Suppose you have a dictionary of items and their prices and 
+# you want to create a list of tuples containing the items and their prices where the price is above 10.
+items = {
+    "apple": 5,
+    "banana": 12,
+    "cherry": 15,
+    "date": 8
+}
+expensive_items = [(item, price) for item, price in items.items() if price > 10]
+print(expensive_items)  # Output: [('banana', 12), ('cherry', 15)]
+
+
+
+
+
+
+
 # while loop
 # The while loop executes a block of code as long as the specified condition is true.
 i = 1
@@ -537,3 +591,29 @@ if __name__ == "__main__":
     else:
         print("i is no longer less than 5.")
     # Output: 0 1 2 3 4 i is no longer less than 5.
+
+
+
+# You can use one or more loops inside another loop.
+for i in range(3):
+    for j in range(2):
+        print(f"i: {i}, j: {j}")
+
+# The pass statement is used as a placeholder when a statement is required syntactically but you do not want any command or code to execute.
+for i in range(5):
+    pass  # Do nothing.
+
+# The pass statement is also used for empty functions.
+def my_function():
+    pass  # Do nothing.
+
+# The pass statement is also used for empty loops.
+for i in range(5):
+    pass  # Do nothing.
+
+# The enumerate() function adds a counter to an iterable and returns it as an enumerate object.
+fruits = ["apple", "banana", "cherry", "mango", "orange"]
+for index, fruit in enumerate(fruits):
+    print(f"index: {index}, fruit: {fruit}")
+    
+# The zip() function returns an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator is paired together, etc.
