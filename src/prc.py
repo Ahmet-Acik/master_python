@@ -221,44 +221,60 @@ student = {"name": "Ahmet", "age": 25, "is_student": True}
 # new_my_dict = dict.fromkeys(new_keys, default_value)
 # print(f"new_my_dict : {new_my_dict}") # output: {'a': 0, 'b': 0, 'c': 0}
 
-squre_d = {x: x**2 for x in range(6)}  # dictionary comprehension
-print(f"squre_d : {squre_d}")  # output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+# squre_d = {x: x**2 for x in range(6)}  # dictionary comprehension
+# print(f"squre_d : {squre_d}")  # output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 
-squre_s = {x**2 for x in range(6) if x > 3}  # set comprehension
-print(f"squre_s : {squre_s }")  # output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+# squre_s = {x**2 for x in range(6) if x > 3}  # set comprehension
+# print(f"squre_s : {squre_s }")  # output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 
-squre_t = tuple((x**2 for x in range(7) if x % 2 == 0))
-print(f"squre_t : {squre_t }")  # output:
+# squre_t = tuple((x**2 for x in range(7) if x % 2 == 0))
+# print(f"squre_t : {squre_t }")  # output:
 
-squre_l = [x**2 for x in range(6) if x % 2 == 1]  # list comprehension
-print(f"squre_l : {squre_l }")  # output:
+# squre_l = [x**2 for x in range(6) if x % 2 == 1]  # list comprehension
+# print(f"squre_l : {squre_l }")  # output:
 
-prices = {"apple": 1, "banana": 2, "orange": 3}
-double_prices = {key: value * 2 for key, value in prices.items()}
-print(
-    f"double_prices : {double_prices}"
-)  # output: {'apple': 2, 'banana': 4, 'orange': 6}
+# prices = {"apple": 1, "banana": 2, "orange": 3}
+# double_prices = {key: value * 2 for key, value in prices.items()}
+# print(
+#     f"double_prices : {double_prices}"
+# )  # output: {'apple': 2, 'banana': 4, 'orange': 6}
 
-prices = {"apple": 1, "banana": 2, "orange": 3}
-double_prices = {x: y * 2 for x, y in prices.items()}
-print(
-    f"double_prices : {double_prices}"
-)  # output: {'apple': 2, 'banana': 4, 'orange': 6}
+# prices = {"apple": 1, "banana": 2, "orange": 3}
+# double_prices = {x: y * 2 for x, y in prices.items()}
+# print(
+#     f"double_prices : {double_prices}"
+# )  # output: {'apple': 2, 'banana': 4, 'orange': 6}
 
-prices = {"apple": 1, "banana": 2, "orange": 3}
-double_prices = {a: b * 2 for a, b in prices.items()}
-print(
-    f"double_prices : {double_prices}"
-)  # output: {'apple': 2, 'banana': 4, 'orange': 6}
+# prices = {"apple": 1, "banana": 2, "orange": 3}
+# double_prices = {a: b * 2 for a, b in prices.items()}
+# print(
+#     f"double_prices : {double_prices}"
+# )  # output: {'apple': 2, 'banana': 4, 'orange': 6}
 
-dict_1 = {"a": 1, "b": 2, "c": 3}
-dict_2 = {"b": 4, "c": 5, "d": 6}
-merged_dict = dict_1 | dict_2
-print(f"merged_dict : {merged_dict}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
-print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 2, 'c': 3}
+# dict_1 = {"a": 1, "b": 2, "c": 3}
+# dict_2 = {"b": 4, "c": 5, "d": 6}
+# merged_dict = dict_1 | dict_2
+# print(f"merged_dict : {merged_dict}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
+# print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 2, 'c': 3}
 
-dict_1 = {"a": 1, "b": 2, "c": 3}
-dict_2 = {"b": 4, "c": 5, "d": 6}
-dict_1.update(dict_2)
-print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
+# dict_1 = {"a": 1, "b": 2, "c": 3}
+# dict_2 = {"b": 4, "c": 5, "d": 6}
+# dict_1.update(dict_2)
+# print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
 
+student_scores = {"Alice": 90, "Bob": 85, "Charlie": 80}
+print(student_scores["Alice"])  # output: 90
+print(student_scores["Charlie"])  # output: 80
+
+sudent_socres_list = [["Alice", 90], ["Bob", 85], ["Charlie", 80]]
+for student, score in sudent_socres_list:
+    if student == "Bob":
+        print(f"{student} : {score}")
+        break
+
+# Using list comprehension to find the score of "Bob"
+bob_score = [score for student, score in sudent_socres_list if student == "Bob"]
+
+# Print the result if "Bob" is found
+if bob_score:
+    print(f"Bob : {bob_score[0]}")

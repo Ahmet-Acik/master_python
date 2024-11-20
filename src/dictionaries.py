@@ -257,3 +257,57 @@ dict_1.update(dict_2)
 print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
 
 
+# Dictionaries vs Lists 
+student_scores = {"Alice": 90, "Bob": 85, "Charlie": 80}
+print(student_scores["Alice"])  # output: 90
+print(student_scores["Charlie"])  # output: 80
+
+student_socres_list = [["Alice", 90], ["Bob", 85], ["Charlie", 80]]
+for student, score in student_socres_list:
+    if student == "Bob":
+        print(f"{student} : {score}")
+        break
+
+# Using list comprehension to find the score of "Bob"
+bob_score = [score for student, score in student_socres_list if student == "Bob"]
+
+# Print the result if "Bob" is found
+if bob_score:
+    print(f"Bob : {bob_score[0]}")
+
+# JSON to Dictionary
+# json.loads() JSON string > dictionary 
+# json.dumps() dictionary > JSON string
+
+import json
+
+# JSON string to dictionary
+# JSON string
+json_string = '{"name": "Ahmet", "age": 25, "is_student": true}'
+# Convert JSON string to dictionary
+student = json.loads(json_string)
+print(f"student : {student}")  # output: {'name': 'Ahmet', 'age': 25, 'is_student': True}
+
+# Dictionary to JSON
+# Dictionary
+student_dict = {"name": "Ahmet", "age": 25, "is_student": True}
+# Convert dictionary to JSON string
+student_dict_to_json_string = json.dumps(student_dict)
+print(f"student_dict_to_json_string : {student_dict_to_json_string}")  # output: {"name": "Ahmet", "age": 25, "is_student": true}
+
+sales_data = [
+    {'date' : '2021-01-01', 'product': 'apple', 'quantity': 10, 'price': 6000},
+    {'date' : '2021-01-02', 'product': 'IBM', 'quantity': 20, 'price': 2000},
+    {'date' : '2021-01-03', 'product': 'HP', 'quantity': 30, 'price': 3000},
+    {'date' : '2021-01-04', 'product': 'Dell', 'quantity': 40, 'price': 4000},
+    {'date' : '2021-01-05', 'product': 'Asus', 'quantity': 50, 'price': 5000}
+]
+product_sales = {
+}
+for sales in sales_data:
+    product = sales['product']
+    quantity = sales['quantity']
+    price = sales['price']
+    product_sales[product] = quantity * price
+    
+    print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
