@@ -86,11 +86,11 @@ print(type(character)) # output: <class 'dict'> - Dictionary type
 print(character["name"]) # output: Ahmet - Accessing value by key
 print(character["age"]) # output: 25 - Accessing value by key
 # get() method returns the value for the specified key if key is in dictionary, else default value is returned
-print(character.get("height", "not found")) # output: not found - get() method returns the value for the specified key if key is in dictionary, else default value is returned
+print(character.get("height", "height not found")) # output: not found - get() method returns the value for the specified key if key is in dictionary, else default value is returned
 
 # Adding, updating, and removing key-value pairs
 # Adding a new key-value pair
-character["height"]["cm"] = 175, 68.9
+character["height"] = 175, 68.9
 print(character) # output: {'name': 'Ahmet', 'age': 25, 'weight': 72.5, 'is_student': True, 'height': 175}
 
 # No add method in dictionary
@@ -151,3 +151,109 @@ def get_dictionary():
         "is_student": True,
     }
 get_dictionary()
+
+student = {"name": "Ahmet", "age": 25, "is_student": True}
+print(student.keys())# output: dict_keys(['name', 'age', 'is_student'])
+print(student.values()) # output: dict_values(['Ahmet', 25, True])
+print(student.items()) # output: dict_items([('name', 'Ahmet'), ('age', 25), ('is_student', True)])
+
+for key in student.keys():
+    print(key) # output: name, age, is_student
+    
+for value in student.values():
+    print(value) # output: Ahmet, 25, True
+    
+for key, value in student.items():
+    print(f"{key} : {value}") # output: name : Ahmet, age : 25, is_student : True
+
+keys =['a', 'b', 'c']
+values = [1, 2, 3]
+my_dict = dict(zip(keys, values))
+print(f"my_dict : {my_dict}") # output: {'a': 1, 'b': 2, 'c': 3}
+
+keys =['a', 'b', 'c']
+default_value = 0
+my_dict = dict.fromkeys(keys, default_value)
+print(f"my_dict : {my_dict}") # output: {'a': 0, 'b': 0, 'c': 0}
+
+squre_dict = {x: x*x for x in range(6)}
+print(f"squre_dict : {squre_dict}") # output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+
+
+# keys() method returns a list of keys 
+# values() method returns a list of values 
+# items() method returns a list of key-value pairs
+student = {"name": "Ahmet", "age": 25, "is_student": True}
+print(student.keys())# output: dict_keys(['name', 'age', 'is_student'])
+print(student.values()) # output: dict_values(['Ahmet', 25, True])
+print(student.items()) # output: dict_items([('name', 'Ahmet'), ('age', 25), ('is_student', True)])
+
+# Accessing key-value pairs using for loop 
+for key in student.keys():
+    print(key) # output: name, age, is_student
+
+for value in student.values():
+    print(value) # output: Ahmet, 25, True
+
+for key, value in student.items():
+    print(f"{key} : {value}") # output: name : Ahmet, age : 25, is_student : True
+
+# zip() function Creating a dictionary from two lists using zip() function
+keys =['a', 'b', 'c']
+values = [1, 2, 3, 4, 5]
+my_dict = dict(zip(keys, values))
+print(f"my_dict : {my_dict}") # output: {'a': 1, 'b': 2, 'c': 3}
+
+# fromkeys() method Creating a dictionary from a list of keys using fromkeys() method
+new_keys =['a', 'b', 'c']
+default_value = 0
+new_my_dict = dict.fromkeys(new_keys, default_value)
+print(f"new_my_dict : {new_my_dict}") # output: {'a': 0, 'b': 0, 'c': 0}
+
+# Dictionary Comprehension
+squre_d = {x: x**2 for x in range(6)}  # dictionary comprehension
+print(f"squre_d : {squre_d}")  # output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+squre_s = {x**2 for x in range(6) if x > 3}  # set comprehension
+print(f"squre_s : {squre_s }")  # output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+squre_t = tuple((x**2 for x in range(7) if x % 2 == 0)) #
+print(f"squre_t : {squre_t }")  # output:
+
+squre_l = [x**2 for x in range(6) if x % 2 == 1]  # list comprehension
+print(f"squre_l : {squre_l }")  # output:
+
+# Dictionary Comprehension
+prices = {"apple": 1, "banana": 2, "orange": 3}
+double_prices = {key: value * 2 for key, value in prices.items()}
+print(
+    f"double_prices : {double_prices}"
+)  # output: {'apple': 2, 'banana': 4, 'orange': 6}
+
+prices = {"apple": 1, "banana": 2, "orange": 3}
+double_prices = {x: y * 2 for x, y in prices.items()}
+print(
+    f"double_prices : {double_prices}"
+)  # output: {'apple': 2, 'banana': 4, 'orange': 6}
+
+prices = {"apple": 1, "banana": 2, "orange": 3}
+double_prices = {a: b * 2 for a, b in prices.items()}
+print(
+    f"double_prices : {double_prices}"
+)  # output: {'apple': 2, 'banana': 4, 'orange': 6}
+
+# Merging Dictionaries Using the | Operator
+dict_1 = {"a": 1, "b": 2, "c": 3}
+dict_2 = {"b": 4, "c": 5, "d": 6}
+merged_dict = dict_1 | dict_2
+print(f"merged_dict : {merged_dict}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
+print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 2, 'c': 3}
+
+# Updating Dictionaries by Merging
+dict_1 = {"a": 1, "b": 2, "c": 3}
+dict_2 = {"b": 4, "c": 5, "d": 6}
+dict_1.update(dict_2)
+print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
+
+
