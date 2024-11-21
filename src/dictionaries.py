@@ -283,7 +283,7 @@ import json
 
 # JSON string to dictionary
 # JSON string
-json_string = '{"name": "Ahmet", "age": 25, "is_student": true}'
+json_string = '{"name": "Ahmet", "age": 25, "is_student": True}'
 # Convert JSON string to dictionary
 student = json.loads(json_string)
 print(f"student : {student}")  # output: {'name': 'Ahmet', 'age': 25, 'is_student': True}
@@ -295,19 +295,18 @@ student_dict = {"name": "Ahmet", "age": 25, "is_student": True}
 student_dict_to_json_string = json.dumps(student_dict)
 print(f"student_dict_to_json_string : {student_dict_to_json_string}")  # output: {"name": "Ahmet", "age": 25, "is_student": true}
 
+
 sales_data = [
-    {'date' : '2021-01-01', 'product': 'apple', 'quantity': 10, 'price': 6000},
-    {'date' : '2021-01-02', 'product': 'IBM', 'quantity': 20, 'price': 2000},
-    {'date' : '2021-01-03', 'product': 'HP', 'quantity': 30, 'price': 3000},
-    {'date' : '2021-01-04', 'product': 'Dell', 'quantity': 40, 'price': 4000},
-    {'date' : '2021-01-05', 'product': 'Asus', 'quantity': 50, 'price': 5000}
+    {"date": "2021-01-01", "product": "Apple", "quantity": 1, "price": 5000},
+    {"date": "2021-01-02", "product": "IBM", "quantity": 2, "price": 2000},
+    {"date": "2021-01-03", "product": "Apple", "quantity": 3, "price": 5000},
+    {"date": "2021-01-04", "product": "IBM", "quantity": 4, "price": 2000},
+    {"date": "2021-01-05", "product": "Apple", "quantity": 5, "price": 5000},
 ]
-product_sales = {
-}
+product_sales = {}
 for sales in sales_data:
-    product = sales['product']
-    quantity = sales['quantity']
-    price = sales['price']
-    product_sales[product] = quantity * price
-    
-    print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
+    product = sales["product"]
+    total = sales["quantity"] * sales["price"]
+    product_sales[product] = product_sales.get(product, 0) + total
+
+print(f"product_sales : {product_sales}")  #  

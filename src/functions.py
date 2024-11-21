@@ -1,16 +1,17 @@
-def greeting(name):
+def greeting(name): 
     print(f"Hello {name}!")
 
 
 greeting("Ahmet")
 
 
-def greet(name, age):
+def greet(name, age): 
     print(f"Hello {name}! You are {age} years old.")
 
 
-greet("Ahmet", 25)
+greet("Ahmet", 25) 
 greet(age=30, name="John")
+
 
 
 def add_item(item, lst=None):  # default value for lst is None
@@ -44,18 +45,6 @@ print(add_numbers(5, 10))
 
 
 def multiply_numbers(a, b):
-    """
-    Multiplies two numbers and returns the result.
-    Args:
-        a (int or float): The first number to multiply.
-        b (int or float): The second number to multiply.
-    Returns:
-        int or float: The result of multiplying a and b.
-        str: Error message if either a or b is zero.
-    Raises:
-        ValueError: If either a or b is zero.
-    """
-    
     if a == 0 or b == 0:
         return "Error: Multiplication by zero is not allowed." # return statement ends the function
     return a * b
@@ -91,7 +80,7 @@ print(f"apply_func(square) {apply_func(square, 5)}") # 25
 print(f"apply_func(double) {apply_func(double, 5)}") # 10
 
 # lambda function 
-# syntax lambda arguments: expression e.g lambda x: x ** 2
+# syntax>  lambda arguments: expression e.g lambda x: x ** 2
 
 add =lambda x,y,z: x+y+z
 print(f"add(1,2,3) {add(1,2,3)}") # 6
@@ -136,6 +125,11 @@ print(f"filtered_fruits {list(filtered_fruits)}") # ['apple']
 my_dict = {1: "apple", 2: "banana", 3: "cherry", 4: "kiwi", 5: "mango"}
 filtered_dict = filter(lambda x: x[1].startswith("k"), my_dict.items())
 print(f"filtered_dict {dict(filtered_dict)}") # {4: 'kiwi'}
+
+
+my_dict = {"fruit": "apple", "sweet": "candy", "cake": "apple pie", "drink" : "water", "food": "apple jam", "snack": "candy"}
+filtered_dict = filter(lambda x: x[1].startswith("a"), my_dict.items())
+print(f"filtered_dict {dict(filtered_dict)}") # {'fruit': 'apple', 'cake': 'apple pie', 'food': 'apple jam'}
 
 
 # map function transform each element in the list

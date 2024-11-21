@@ -254,27 +254,73 @@ student = {"name": "Ahmet", "age": 25, "is_student": True}
 # dict_1 = {"a": 1, "b": 2, "c": 3}
 # dict_2 = {"b": 4, "c": 5, "d": 6}
 # merged_dict = dict_1 | dict_2
-# print(f"merged_dict : {merged_dict}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
-# print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 2, 'c': 3}
+# # print(f"merged_dict : {merged_dict}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
+# # print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 2, 'c': 3}
 
-# dict_1 = {"a": 1, "b": 2, "c": 3}
-# dict_2 = {"b": 4, "c": 5, "d": 6}
-# dict_1.update(dict_2)
-# print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
+# # dict_1 = {"a": 1, "b": 2, "c": 3}
+# # dict_2 = {"b": 4, "c": 5, "d": 6}
+# # dict_1.update(dict_2)
+# # print(f"dict_1 : {dict_1}")  # output: {'a': 1, 'b': 4, 'c': 5, 'd': 6}
 
-student_scores = {"Alice": 90, "Bob": 85, "Charlie": 80}
-print(student_scores["Alice"])  # output: 90
-print(student_scores["Charlie"])  # output: 80
+# # student_scores = {"Alice": 90, "Bob": 85, "Charlie": 80}
+# # print(student_scores["Alice"])  # output: 90
+# # print(student_scores["Charlie"])  # output: 80
 
-sudent_socres_list = [["Alice", 90], ["Bob", 85], ["Charlie", 80]]
-for student, score in sudent_socres_list:
-    if student == "Bob":
-        print(f"{student} : {score}")
-        break
+# # student_scores_list = [["Alice", 90], ["Bob", 85], ["Charlie", 80]]
+# # for student, score in student_scores_list:
+# #     if student == "Bob":
+# #         print(f"{student} : {score}")
+# #         break
 
-# Using list comprehension to find the score of "Bob"
-bob_score = [score for student, score in sudent_socres_list if student == "Bob"]
+# # # Using list comprehension to find the score of "Bob"
+# # bob_score = [score for student, score in student_scores_list if student == "Bob"]
 
-# Print the result if "Bob" is found
-if bob_score:
-    print(f"Bob : {bob_score[0]}")
+# # # Print the result if "Bob" is found
+# # if bob_score:
+# #     print(f"Bob : {bob_score[0]}")
+
+# # print(student_scores_list[0])
+
+
+# # my_dict = {"fruit": "apple", "sweet": "candy", "cake": "apple pie", "drink" : "water", "food": "apple jam", "snack": "candy"}
+# # filtered_dict = filter(lambda x: x[1].startswith("a"), my_dict.items())
+# # print(f"filtered_dict {dict(filtered_dict)}") #
+
+
+# # Dictionaries vs Lists
+# # student_scores = {"Alice": 90, "Bob": 85, "Charlie": 80}
+
+# # print(student_scores["Charlie"])  # output: 80
+
+# student_socres_list = '{"Alice": 90, "Bob": 95, "Charlie": 80, "Bob": 60}'
+# student_socres_list2 = {"Alice": 20, "Bob": 95, "Charlie": 50, "Bob": 60}
+
+
+# import json
+
+# print(json.loads(student_socres_list))
+# print(json.dumps(student_socres_list2))
+
+
+# # for student, score in student_socres_list:
+# #     if student == "Bob":
+# #         print(f"{student} : {score}")
+# #         break
+# # # print(student_socres_list["Bob"]) # output: 95
+# # print(student_socres_list[0]) # output: 95
+# # print(student_socres_list[0:2]) # output: 95
+
+sales_data = [
+    {"date": "2021-01-01", "product": "apple", "quantity": 1, "price": 5000},
+    {"date": "2021-01-02", "product": "IBM", "quantity": 2, "price": 2000},
+    {"date": "2021-01-03", "product": "apple", "quantity": 3, "price": 5000},
+    {"date": "2021-01-04", "product": "IBM", "quantity": 4, "price": 2000},
+    {"date": "2021-01-05", "product": "apple", "quantity": 5, "price": 5000},
+]
+product_sales = {}
+for sales in sales_data:
+    product = sales["product"]
+    total = sales["quantity"] * sales["price"]
+    product_sales[product] = product_sales.get(product, 0) + total
+
+print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
