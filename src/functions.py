@@ -1,3 +1,34 @@
+"""
+    This module contains various examples of Python functions, including:
+    1. Basic function definitions and calls:
+        - greeting(name): Prints a greeting message.
+        - greet(name, age): Prints a greeting message with name and age.
+        - describe_pet(animal_type, pet_name): Prints information about a pet.
+        - add_item(item, lst=None): Adds an item to a list, with a default empty list.
+        - check_age_group(age): Returns a string indicating the age group.
+        - add_numbers(a, b): Returns the sum of two numbers.
+        - divide_numbers(a, b): Returns the product of two numbers or an error message if division by zero.
+    2. Functions as first-class objects:
+        - apply_func(func, value): Applies a function to a value.
+        - get_power_function(n): Returns a lambda function that raises a number to the power of n.
+    3. Lambda functions:
+        - Various examples of lambda functions for addition, checking even/odd, filtering, and mapping.
+    4. Higher-order functions:
+        - filter_list(lst): Filters a list to include only even numbers.
+        - double_list(lst): Doubles each element in a list.
+        - sum_list(lst): Sums all elements in a list.
+        - product_list(lst): Multiplies all elements in a list.
+    5. Partial functions:
+        - power(base, exponent): Returns the result of base raised to the power of exponent.
+        - square: Partial function to square a number.
+        - cube: Partial function to cube a number.
+    6. Closures:
+        - outer_function(x): Returns an inner function that adds x to its argument.
+    7. Decorators:
+        - my_decorator(func): A simple decorator that prints messages before and after a function call.
+        - repeat(num_times): A decorator that repeats the function call a specified number of times.
+    Examples of usage are provided for each function.
+"""
 def greeting(name):
     print(f"Hello {name}!")
 

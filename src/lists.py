@@ -1,4 +1,46 @@
 # List creation
+"""
+This module demonstrates various operations and manipulations on lists in Python.
+
+It covers:
+- List creation using different methods
+- List comprehensions with and without conditions
+- Nested list comprehensions
+- Applying functions to list elements
+- List methods for modification and querying
+- List slicing and indexing
+- List concatenation and repetition
+- Built-in functions for lists (len, min, max, sum, sorted)
+- List comprehensions with multiple conditions and nested loops
+- String manipulation with list comprehensions
+- List modification using slicing
+- Using list comprehensions to create matrices
+- Utility functions to get specific items from a list
+- Utility functions to get sublists with different slicing techniques
+- Utility functions to generate sequences and iterate through lists
+
+Functions:
+- square(x): Returns the square of x.
+- classify(x): Classifies x as even or odd.
+- get_first_item(items): Returns the first item in the list.
+- get_last_item(items): Returns the last item in the list.
+- get_second_item(items): Returns the second item in the list.
+- get_penultimate_item(items): Returns the penultimate item in the list.
+- get_items(items, start, end): Returns a sublist from start to end.
+- get_items_from_start(items, end): Returns a sublist from the start to end.
+- get_items_to_end(items, start): Returns a sublist from start to the end.
+- get_items_with_step(items, start, end, step): Returns a sublist from start to end with a step.
+- get_items_with_negative_step(items, start, end): Returns a sublist from start to end with a negative step.
+- get_items_with_negative_start(items, start, end): Returns a sublist from a negative start to end.
+- get_items_with_negative_end(items, start, end): Returns a sublist from start to a negative end.
+- get_items_with_negative_start_and_end(items, start, end): Returns a sublist from a negative start to a negative end.
+- get_items_reversed(items): Returns the reversed list.
+- get_items_reversed_with_step(items, step): Returns the reversed list with a step.
+- get_items_reversed_with_negative_step(items, step): Returns the list with a negative step.
+- get_items_reversed_with_negative_start(items, start): Returns the list with a negative start.
+- range_sequence(start, stop, step=1): Returns a list of numbers from start to stop with a step.
+- iterate_list(items): Returns a list of items by iterating through the input list.
+"""
 
 empty_list = []
 print(f"empty_list: {empty_list}")
