@@ -310,17 +310,23 @@ student = {"name": "Ahmet", "age": 25, "is_student": True}
 # # print(student_socres_list[0]) # output: 95
 # # print(student_socres_list[0:2]) # output: 95
 
-sales_data = [
-    {"date": "2021-01-01", "product": "apple", "quantity": 1, "price": 5000},
-    {"date": "2021-01-02", "product": "IBM", "quantity": 2, "price": 2000},
-    {"date": "2021-01-03", "product": "apple", "quantity": 3, "price": 5000},
-    {"date": "2021-01-04", "product": "IBM", "quantity": 4, "price": 2000},
-    {"date": "2021-01-05", "product": "apple", "quantity": 5, "price": 5000},
-]
-product_sales = {}
-for sales in sales_data:
-    product = sales["product"]
-    total = sales["quantity"] * sales["price"]
-    product_sales[product] = product_sales.get(product, 0) + total
+# sales_data = [
+#     {"date": "2021-01-01", "product": "apple", "quantity": 1, "price": 5000},
+#     {"date": "2021-01-02", "product": "IBM", "quantity": 2, "price": 2000},
+#     {"date": "2021-01-03", "product": "apple", "quantity": 3, "price": 5000},
+#     {"date": "2021-01-04", "product": "IBM", "quantity": 4, "price": 2000},
+#     {"date": "2021-01-05", "product": "apple", "quantity": 5, "price": 5000},
+# ]
+# product_sales = {}
+# for sales in sales_data:
+#     product = sales["product"]
+#     total = sales["quantity"] * sales["price"]
+#     product_sales[product] = product_sales.get(product, 0) + total
 
-print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
+# print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
+
+def describe_pet(animal_type, pet_name):
+    print(f"I have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name}.")
+    
+describe_pet(animal_type="dog", pet_name="Buddy")
