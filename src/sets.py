@@ -1,4 +1,30 @@
 # # sets.py
+"""
+This module demonstrates the usage of sets in Python. Sets are unordered collections of unique elements.
+They do not allow duplicates and support various methods for adding, removing, and manipulating elements.
+
+Functions and examples included:
+- Creating sets: empty set, set with elements, heterogeneous set
+- Set methods: add, copy, remove, discard, pop, clear
+- Converting lists and tuples to sets
+- Set operations: union, intersection, difference, symmetric difference, subset, superset, disjoint
+- Frozen sets: immutable sets with no add, remove, discard, pop, clear operations
+
+Examples:
+- Adding elements to a set
+- Removing elements from a set
+- Discarding elements from a set
+- Popping elements from a set
+- Clearing a set
+- Performing set operations (union, intersection, difference, symmetric difference)
+- Checking subset, superset, and disjoint status
+- Handling AttributeError for frozenset operations
+
+Note:
+- Sets are defined using curly braces {} or the set() constructor.
+- An empty set must be created using set(), not {}.
+- Tuples are allowed as elements in a set, but lists are not (unhashable type).
+"""
 
 my_set = {1, 2, 3, 4, 5}
 my_empty_set = {}
