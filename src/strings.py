@@ -1,12 +1,28 @@
 # strings.py
-# string declaration and assignment
-# string concatenation
-# string repetition
-# string formatting
-# string slicing
-# string methods
-
-
+"""
+    strings.py
+    This module provides various functions to perform common string operations such as declaration, concatenation, repetition, formatting, slicing, and applying string methods.
+    
+    Functions:
+    - declare_and_assign(): Returns a simple greeting string.
+    - concatenate_strings(str1, str2): Concatenates two strings and returns the result.
+    - repeat_string(string, times): Repeats a string a specified number of times and returns the result.
+    - format_string(name, age): Formats a string using the provided name and age.
+    - slice_string(string, start, end): Slices a string from the start index to the end index and returns the result.
+    - string_methods(string): Applies various string methods to the input string and returns a dictionary of results.
+    - print_statements(): Prints several predefined statements.
+    - get_character_in_name(name, index): Returns the character at the specified index in the given name.
+    - get_substring(string, start, end): Returns a substring from the start index to the end index.
+    - get_quote_slices(quote): Returns a dictionary of various slices of the given quote.
+    - get_learning_fun_slices(learning_fun): Returns a dictionary of various slices of the given string.
+    - reverse_string(string): Reverses the input string and returns the result.
+    - concatenate_names(first_name, last_name): Concatenates a first name and last name with a space in between.
+    - format_string(name, age): Formats a string using different methods and returns a dictionary of results.
+    - string_methods(name): Applies various string methods to the input name and returns a dictionary of results.
+    - check_string_methods(): Demonstrates the use of various string methods and functions such as map, filter, and reduce.
+    Usage:
+    Run the module as a script to see examples of the functions in action.
+"""
 def declare_and_assign():
     """
     String declaration and assignment.
