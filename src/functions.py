@@ -57,9 +57,13 @@ def add_item(item, lst=None):  # default value for lst is None
     lst.append(item)
     return lst
 
+list_from_add_item = add_item(5)
+
 
 print(add_item(5))
 print(add_item(10))
+add_item(5)
+add_item(10)
 
 
 def check_age_group(age):
@@ -126,6 +130,8 @@ print(f"apply_func(double) {apply_func(double, 5)}")  # 10
 add = lambda x, y, z: x + y + z
 print(f"add(1,2,3) {add(1,2,3)}")  # 6
 
+print(lambda x: x ** 2, 5)  
+
 even = lambda x: x % 2 == 0
 print(f"even(5) {even(5)}")  # False
 print(f"even(10) {even(10)}")  # True
@@ -143,6 +149,67 @@ def apply_func(func, value):
 print(f"apply_func(lambda x: x ** 2, 5) {apply_func(lambda x: x ** 2, 5)}")  # 25
 print(f"apply_func(lambda x: x ** 3, 5) {apply_func(lambda x: x ** 3, 5)}")  # 125
 print(f"apply_func(lambda x: x * 2, 5) {apply_func(lambda x: x * 2, 5)}")  # 10
+
+
+fruits = [
+    "apple",
+    "banana",
+    "cherry",
+    "kiwi",
+    "mango",
+    "orange",
+    "pineapple",
+    "strawberry",
+    "watermelon",
+    "grape",
+    "blueberry",
+    "raspberry",
+    "blackberry",
+    "papaya",
+    "pear",
+    "peach",
+    "plum",
+    "pomegranate",
+     "melon"
+]
+fruits_with_p = list(filter(lambda x: x.startswith("p"), fruits))
+print(fruits_with_p)
+
+fruits_with_b = list(
+    filter(
+        lambda x: x.startswith("b"),
+        [
+            "apple",
+            "banana",
+            "cherry",
+            "kiwi",
+            "mango",
+            "orange",
+            "pineapple",
+            "strawberry",
+            "melon",
+            "watermelon",
+            "grape",
+            "blueberry",
+            "raspberry",
+            "blackberry",
+            "papaya",
+            "pear",
+        ],
+    )
+)
+print(fruits_with_b)
+
+
+fruits = ["apple", "banana", "cherry", "mango", "melon", "orange"]
+fruits_with_m = []
+for x in fruits:
+    if x.startswith("m"):
+        fruits_with_m.append(x)
+
+print(fruits_with_m)
+
+print(list(filter(lambda x: x.startswith("m"), fruits)))
 
 
 # lambda function as a return value
@@ -210,7 +277,11 @@ print(
 # reduce function
 from functools import reduce
 
-sum_list = lambda lst: reduce(lambda x, y: x + y, lst)
+map() # map() function returns a map object(which is an iterator) of the results after applying the given function to each item of a given iterable (list, tuple etc.)
+filter() # filter() function returns an iterator 
+reduce() # reduce() function returns a single value
+
+
 print(f"sum_list([1, 2, 3, 4, 5]) {sum_list([1, 2, 3, 4, 5])}")  # 15
 numbers = [1, 2, 3, 4, 5]
 sum_numbers = reduce(lambda x, y: x + y, numbers)
@@ -314,3 +385,55 @@ def greet(name):
 
 
 greet("Ahmet")
+
+def add_item_toList(item, abc=None):
+    if abc is None:
+        abc = []
+    abc.append(item)
+    return abc
+
+print(add_item_toList(5))
+print(add_item_toList(10))
+print(add_item_toList(15))
+
+def add_item_toList(item, abc=[]):
+    abc.append(item)
+    return abc
+
+print(add_item_toList(5))
+print(add_item_toList(10))
+print(add_item_toList(15))
+
+
+def math_operations(a, b, operation):
+    return operation(a, b)
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+
+print(math_operations(5, 3, add))  
+print(math_operations(5, 3, subtract))
+print(math_operations(5, 3, multiply))
+
+def math_operations(a, b, operation):
+    if operation == "+":
+        return a + b
+    elif operation == "-":
+        return a - b
+    elif operation == "*":
+        return a * b
+    else:
+        return "Invalid operation"
+    
+
+print(math_operations(5, 3, "+"))
+print(math_operations(5, 3, "-"))
+print(math_operations(5, 3, "*"))
+print(math_operations(5, 3, "/"))

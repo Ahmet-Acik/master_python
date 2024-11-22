@@ -323,10 +323,131 @@ student = {"name": "Ahmet", "age": 25, "is_student": True}
 #     total = sales["quantity"] * sales["price"]
 #     product_sales[product] = product_sales.get(product, 0) + total
 
-# print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
+# # print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
 
-def describe_pet(animal_type, pet_name):
-    print(f"I have a {animal_type}.")
-    print(f"My {animal_type}'s name is {pet_name}.")
-    
-describe_pet(animal_type="dog", pet_name="Buddy")
+# def describe_pet(animal_type, pet_name):
+#     print(f"I have a {animal_type}.")
+#     print(f"My {animal_type}'s name is {pet_name}.")
+
+# describe_pet(animal_type="dog", pet_name="Buddy")
+
+
+# def add_item_toList(item, abc=None):
+#     if abc is None:
+#         abc = []
+#     abc.append(item)
+#     return abc
+
+# print(add_item_toList(5))
+# print(add_item_toList(10))
+# print(add_item_toList(15))
+
+# def add_item_toList(item, abc=[]):
+#     abc.append(item)
+#     return abc
+
+# print(add_item_toList(5))
+# print(add_item_toList(10))
+# print(add_item_toList(15))
+
+# def hello(name):
+#     return f"Hello World! {name}"
+
+# say = hello
+
+# print(say("Ahmet"))
+
+# def greet(name:str, age:int):
+#     return f"Hello, {name}, you are {age} years old!"
+
+# print(hello("ahmet"))
+
+
+# def requires_permission(permission):
+#     def decorator(func):
+#         def wrapper(user, args):
+#             if user.get("permissions") and permission in user["permissions"]:
+#                 return func(user, args)
+#             else:
+#                 print(f"User '{user['name']}' does not have permission '{permission}'")
+#         return wrapper
+#     return decorator
+
+# # @requires_permission("admin")
+# # def delete_user(user, user_to_delete):
+# #     print(f"User '{user_to_delete}' deleted by '{user['name']}'")
+
+# # user = {"name": "Alice", "permissions": ["admin"]}
+# # delete_user(user, "Bob")
+
+# # user = {"name": "Bob", "permissions": ["user"]}
+# # delete_user(user, "Charlie")
+
+# def add(x, y):
+#     return x + y
+
+
+# print((lambda x,y: x+y)(2,3))
+# print((lambda x: x**3)(3))
+
+# print((lambda x: x.capitalize())("HELLO"))
+
+fruits = [
+    "apple",
+    "banana",
+    "cherry",
+    "kiwi",
+    "mango",
+    "orange",
+    "pineapple",
+    "strawberry",
+    "watermelon",
+    "grape",
+    "blueberry",
+    "raspberry",
+    "blackberry",
+    "papaya",
+    "pear",
+    "peach",
+    "plum",
+    "pomegranate",
+     "melon"
+]
+fruits_with_p = list(filter(lambda x: x.startswith("p"), fruits))
+print(fruits_with_p)
+
+fruits_with_b = list(
+    filter(
+        lambda x: x.startswith("b"),
+        [
+            "apple",
+            "banana",
+            "cherry",
+            "kiwi",
+            "mango",
+            "orange",
+            "pineapple",
+            "strawberry",
+            "melon",
+            "watermelon",
+            "grape",
+            "blueberry",
+            "raspberry",
+            "blackberry",
+            "papaya",
+            "pear",
+        ],
+    )
+)
+print(fruits_with_b)
+
+
+fruits = ["apple", "banana", "cherry", "mango", "melon", "orange"]
+fruits_with_m = []
+for x in fruits:
+    if x.startswith("m"):
+        fruits_with_m.append(x)
+
+print(fruits_with_m)
+
+print(list(filter(lambda x: x.startswith("m"), fruits)))

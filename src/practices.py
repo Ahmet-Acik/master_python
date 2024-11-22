@@ -80,3 +80,25 @@ print(ascii_tuple)  # Output: (72, 101, 108, 108, 111)
 # How do you create a tuple of numbers and their binary representations from 1 to 5?
 binary_representation = tuple((x, bin(x)) for x in range(1, 6))
 print(binary_representation)  # Output: ((1, '0b1'), (2, '0b10'), (3, '0b11'), (4, '0b100'), (5, '0b101'))
+
+
+def add(x, y):
+    return x + y
+
+
+def fibonacci2(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+
+def greet(name:str, age:int):
+    print(f"Hello,{name}, you are {age} years old!")
+    
+greet(23,"Ahmet")
+
+greet(age=23, name="Ahmet")
+
+
+print('hello world, end of the page')
