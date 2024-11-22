@@ -1,4 +1,6 @@
 # src/loops.py
+
+
 # while loop
 # The while loop executes a block of code as long as the specified condition is true.
 i = 1
@@ -117,7 +119,60 @@ expensive_items = [(item, price) for item, price in items.items() if price > 10]
 print(expensive_items)  # Output: [('banana', 12), ('cherry', 15)]
 
 
+"""
+Comprehensions and generators are related concepts in Python, but they serve different purposes and have distinct characteristics. Here's a clear comparison:
 
+### Comprehensions
+
+1. **Definition**:
+   - Comprehensions are a concise way to create collections such as lists, sets, and dictionaries.
+
+2. **Types**:
+   - **List Comprehensions**: Create lists.
+   - **Set Comprehensions**: Create sets.
+   - **Dictionary Comprehensions**: Create dictionaries.
+
+3. **Syntax**:
+   - List Comprehension: `[expression for item in iterable if condition]`
+   - Set Comprehension: `{expression for item in iterable if condition}`
+   - Dictionary Comprehension: `{key: value for item in iterable if condition}`
+
+4. **Example**:
+   - List Comprehension: `[x**2 for x in range(10)]` creates a list of squares.
+
+### Generators
+
+1. **Definition**:
+   - Generators are a way to create iterators that generate values on-the-fly and do not store the entire sequence in memory.
+
+2. **Types**:
+   - **Generator Functions**: Use the `yield` keyword to produce values one at a time.
+   - **Generator Expressions**: Similar to comprehensions but use parentheses and generate values lazily.
+
+3. **Syntax**:
+   - Generator Expression: `(expression for item in iterable if condition)`
+
+4. **Example**:
+   - Generator Expression: `(x**2 for x in range(10))` creates a generator that yields squares.
+
+### Key Differences
+
+1. **Memory Usage**:
+   - Comprehensions create collections that are stored in memory.
+   - Generators produce values one at a time and do not store the entire sequence in memory.
+
+2. **Evaluation**:
+   - Comprehensions evaluate and store all elements immediately.
+   - Generators evaluate elements lazily, generating them as needed.
+
+### Summary
+
+- **Comprehensions**: A concise way to create collections like lists, sets, and dictionaries.
+- **Generators**: A way to create iterators that generate values on-the-fly, using less memory.
+
+Both comprehensions and generators are powerful tools in Python, each with its own use cases and advantages.
+
+"""
 
 
 
