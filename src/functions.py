@@ -170,7 +170,7 @@ fruits = [
     "peach",
     "plum",
     "pomegranate",
-     "melon"
+    "melon"
 ]
 fruits_with_p = list(filter(lambda x: x.startswith("p"), fruits))
 print(fruits_with_p)

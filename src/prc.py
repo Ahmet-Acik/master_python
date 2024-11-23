@@ -287,167 +287,204 @@ student = {"name": "Ahmet", "age": 25, "is_student": True}
 # # print(f"filtered_dict {dict(filtered_dict)}") #
 
 
-# # Dictionaries vs Lists
-# # student_scores = {"Alice": 90, "Bob": 85, "Charlie": 80}
+# # # Dictionaries vs Lists
+# # # student_scores = {"Alice": 90, "Bob": 85, "Charlie": 80}
 
-# # print(student_scores["Charlie"])  # output: 80
+# # # print(student_scores["Charlie"])  # output: 80
 
-# student_socres_list = '{"Alice": 90, "Bob": 95, "Charlie": 80, "Bob": 60}'
-# student_socres_list2 = {"Alice": 20, "Bob": 95, "Charlie": 50, "Bob": 60}
-
-
-# import json
-
-# print(json.loads(student_socres_list))
-# print(json.dumps(student_socres_list2))
+# # student_socres_list = '{"Alice": 90, "Bob": 95, "Charlie": 80, "Bob": 60}'
+# # student_socres_list2 = {"Alice": 20, "Bob": 95, "Charlie": 50, "Bob": 60}
 
 
-# # for student, score in student_socres_list:
-# #     if student == "Bob":
-# #         print(f"{student} : {score}")
-# #         break
-# # # print(student_socres_list["Bob"]) # output: 95
-# # print(student_socres_list[0]) # output: 95
-# # print(student_socres_list[0:2]) # output: 95
+# # import json
 
-# sales_data = [
-#     {"date": "2021-01-01", "product": "apple", "quantity": 1, "price": 5000},
-#     {"date": "2021-01-02", "product": "IBM", "quantity": 2, "price": 2000},
-#     {"date": "2021-01-03", "product": "apple", "quantity": 3, "price": 5000},
-#     {"date": "2021-01-04", "product": "IBM", "quantity": 4, "price": 2000},
-#     {"date": "2021-01-05", "product": "apple", "quantity": 5, "price": 5000},
+# # print(json.loads(student_socres_list))
+# # print(json.dumps(student_socres_list2))
+
+
+# # # for student, score in student_socres_list:
+# # #     if student == "Bob":
+# # #         print(f"{student} : {score}")
+# # #         break
+# # # # print(student_socres_list["Bob"]) # output: 95
+# # # print(student_socres_list[0]) # output: 95
+# # # print(student_socres_list[0:2]) # output: 95
+
+# # sales_data = [
+# #     {"date": "2021-01-01", "product": "apple", "quantity": 1, "price": 5000},
+# #     {"date": "2021-01-02", "product": "IBM", "quantity": 2, "price": 2000},
+# #     {"date": "2021-01-03", "product": "apple", "quantity": 3, "price": 5000},
+# #     {"date": "2021-01-04", "product": "IBM", "quantity": 4, "price": 2000},
+# #     {"date": "2021-01-05", "product": "apple", "quantity": 5, "price": 5000},
+# # ]
+# # product_sales = {}
+# # for sales in sales_data:
+# #     product = sales["product"]
+# #     total = sales["quantity"] * sales["price"]
+# #     product_sales[product] = product_sales.get(product, 0) + total
+
+# # # print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
+
+# # def describe_pet(animal_type, pet_name):
+# #     print(f"I have a {animal_type}.")
+# #     print(f"My {animal_type}'s name is {pet_name}.")
+
+# # describe_pet(animal_type="dog", pet_name="Buddy")
+
+
+# # def add_item_toList(item, abc=None):
+# #     if abc is None:
+# #         abc = []
+# #     abc.append(item)
+# #     return abc
+
+# # print(add_item_toList(5))
+# # print(add_item_toList(10))
+# # print(add_item_toList(15))
+
+# # def add_item_toList(item, abc=[]):
+# #     abc.append(item)
+# #     return abc
+
+# # print(add_item_toList(5))
+# # print(add_item_toList(10))
+# # print(add_item_toList(15))
+
+# # def hello(name):
+# #     return f"Hello World! {name}"
+
+# # say = hello
+
+# # print(say("Ahmet"))
+
+# # def greet(name:str, age:int):
+# #     return f"Hello, {name}, you are {age} years old!"
+
+# # print(hello("ahmet"))
+
+
+# # def requires_permission(permission):
+# #     def decorator(func):
+# #         def wrapper(user, args):
+# #             if user.get("permissions") and permission in user["permissions"]:
+# #                 return func(user, args)
+# #             else:
+# #                 print(f"User '{user['name']}' does not have permission '{permission}'")
+# #         return wrapper
+# #     return decorator
+
+# # # @requires_permission("admin")
+# # # def delete_user(user, user_to_delete):
+# # #     print(f"User '{user_to_delete}' deleted by '{user['name']}'")
+
+# # # user = {"name": "Alice", "permissions": ["admin"]}
+# # # delete_user(user, "Bob")
+
+# # # user = {"name": "Bob", "permissions": ["user"]}
+# # # delete_user(user, "Charlie")
+
+# # def add(x, y):
+# #     return x + y
+
+
+# # print((lambda x,y: x+y)(2,3))
+# # print((lambda x: x**3)(3))
+
+# # print((lambda x: x.capitalize())("HELLO"))
+
+# fruits = [
+#     "apple",
+#     "banana",
+#     "cherry",
+#     "kiwi",
+#     "mango",
+#     "orange",
+#     "pineapple",
+#     "strawberry",
+#     "watermelon",
+#     "grape",
+#     "blueberry",
+#     "raspberry",
+#     "blackberry",
+#     "papaya",
+#     "pear",
+#     "peach",
+#     "plum",
+#     "pomegranate",
+#      "melon"
 # ]
-# product_sales = {}
-# for sales in sales_data:
-#     product = sales["product"]
-#     total = sales["quantity"] * sales["price"]
-#     product_sales[product] = product_sales.get(product, 0) + total
+# fruits_with_p = list(filter(lambda x: x.startswith("p"), fruits))
+# print(fruits_with_p)
 
-# # print(f"product_sales : {product_sales}")  # output: {'apple': 60000}
-
-# def describe_pet(animal_type, pet_name):
-#     print(f"I have a {animal_type}.")
-#     print(f"My {animal_type}'s name is {pet_name}.")
-
-# describe_pet(animal_type="dog", pet_name="Buddy")
-
-
-# def add_item_toList(item, abc=None):
-#     if abc is None:
-#         abc = []
-#     abc.append(item)
-#     return abc
-
-# print(add_item_toList(5))
-# print(add_item_toList(10))
-# print(add_item_toList(15))
-
-# def add_item_toList(item, abc=[]):
-#     abc.append(item)
-#     return abc
-
-# print(add_item_toList(5))
-# print(add_item_toList(10))
-# print(add_item_toList(15))
-
-# def hello(name):
-#     return f"Hello World! {name}"
-
-# say = hello
-
-# print(say("Ahmet"))
-
-# def greet(name:str, age:int):
-#     return f"Hello, {name}, you are {age} years old!"
-
-# print(hello("ahmet"))
+# fruits_with_b = list(
+#     filter(
+#         lambda x: x.startswith("b"),
+#         [
+#             "apple",
+#             "banana",
+#             "cherry",
+#             "kiwi",
+#             "mango",
+#             "orange",
+#             "pineapple",
+#             "strawberry",
+#             "melon",
+#             "watermelon",
+#             "grape",
+#             "blueberry",
+#             "raspberry",
+#             "blackberry",
+#             "papaya",
+#             "pear",
+#         ],
+#     )
+# )
+# print(fruits_with_b)
 
 
-# def requires_permission(permission):
-#     def decorator(func):
-#         def wrapper(user, args):
-#             if user.get("permissions") and permission in user["permissions"]:
-#                 return func(user, args)
-#             else:
-#                 print(f"User '{user['name']}' does not have permission '{permission}'")
-#         return wrapper
-#     return decorator
+# fruits = ["apple", "banana", "cherry", "mango", "melon", "orange"]
+# fruits_with_m = []
+# for x in fruits:
+#     if x.startswith("m"):
+#         fruits_with_m.append(x)
 
-# # @requires_permission("admin")
-# # def delete_user(user, user_to_delete):
-# #     print(f"User '{user_to_delete}' deleted by '{user['name']}'")
+# print(fruits_with_m)
 
-# # user = {"name": "Alice", "permissions": ["admin"]}
-# # delete_user(user, "Bob")
+# print(list(filter(lambda x: x.startswith("m"), fruits)))
 
-# # user = {"name": "Bob", "permissions": ["user"]}
-# # delete_user(user, "Charlie")
+# strs =["ahmet", "mehmet", "ali", "veli", "ayse", "fatma", "zeynep", "elif", "aylin"]
+# # strs_with_a = list(filter(lambda x: x.startswith("a"), strs))
+# # print(strs_with_a)
 
-# def add(x, y):
-#     return x + y
-
-
-# print((lambda x,y: x+y)(2,3))
-# print((lambda x: x**3)(3))
-
-# print((lambda x: x.capitalize())("HELLO"))
-
-fruits = [
-    "apple",
-    "banana",
-    "cherry",
-    "kiwi",
-    "mango",
-    "orange",
-    "pineapple",
-    "strawberry",
-    "watermelon",
-    "grape",
-    "blueberry",
-    "raspberry",
-    "blackberry",
-    "papaya",
-    "pear",
-    "peach",
-    "plum",
-    "pomegranate",
-     "melon"
-]
-fruits_with_p = list(filter(lambda x: x.startswith("p"), fruits))
-print(fruits_with_p)
-
-fruits_with_b = list(
-    filter(
-        lambda x: x.startswith("b"),
-        [
-            "apple",
-            "banana",
-            "cherry",
-            "kiwi",
-            "mango",
-            "orange",
-            "pineapple",
-            "strawberry",
-            "melon",
-            "watermelon",
-            "grape",
-            "blueberry",
-            "raspberry",
-            "blackberry",
-            "papaya",
-            "pear",
-        ],
-    )
-)
-print(fruits_with_b)
+# # # numbers=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# # # even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+# # # print(even_numbers)
+# # # odd_numbers = list(filter(lambda x: x % 2 == 1, numbers))
+# # # print(odd_numbers)
+# # # numbers_over_5 = list(filter(lambda x: x > 5, numbers))
+# # # print(numbers_over_5)
+# # # numbers_under_5 = list(filter(lambda x: x < 5, numbers))
+# # # print(numbers_under_5)
 
 
-fruits = ["apple", "banana", "cherry", "mango", "melon", "orange"]
-fruits_with_m = []
-for x in fruits:
-    if x.startswith("m"):
-        fruits_with_m.append(x)
 
-print(fruits_with_m)
+# # strs_to_upper = list(map(lambda x: x.upper(), strs))
+# # print(strs_to_upper)
 
-print(list(filter(lambda x: x.startswith("m"), fruits)))
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# squared_numbers = list(map(lambda x: x ** 2, numbers))
+# print(squared_numbers)
+# cube_numbers = list(map(lambda x: x ** 3, numbers))
+# print(cube_numbers)
+# add_10_precent = list(map(lambda x: round(x * 1.1,2), numbers))
+# print((add_10_precent))
+
+# def addtenpercent(x):
+#     return round(x * 1.1,2)
+
+# add_10_precent = list(map(addtenpercent, numbers))
+# print((add_10_precent))
+
+strs =["ahmet", "mehmet", "ali", "veli", "ayse", "fatma", "zeynep", "elif", "aylin"]
+zfill_strs = list(map(lambda x: x.zfill(10), strs))
+print(zfill_strs)
