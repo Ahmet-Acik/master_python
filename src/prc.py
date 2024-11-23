@@ -485,6 +485,19 @@ student = {"name": "Ahmet", "age": 25, "is_student": True}
 # add_10_precent = list(map(addtenpercent, numbers))
 # print((add_10_precent))
 
-strs =["ahmet", "mehmet", "ali", "veli", "ayse", "fatma", "zeynep", "elif", "aylin"]
-zfill_strs = list(map(lambda x: x.zfill(10), strs))
-print(zfill_strs)
+# strs =["ahmet", "mehmet", "ali", "veli", "ayse", "fatma", "zeynep", "elif", "aylin"]
+# zfill_strs = list(map(lambda x: x.zfill(10), strs))
+# print(zfill_strs)
+
+def get_biweekly_period(week):
+    return (week // 2) + 1
+
+# Example usage
+print(get_biweekly_period(0))  # Output: 1
+print(get_biweekly_period(1))  # Output: 1
+print(get_biweekly_period(2))  # Output: 2
+print(get_biweekly_period(3))  # Output: 2
+print(get_biweekly_period(4))  # Output: 3
+print(get_biweekly_period(5))  # Output: 3
+    
+    
