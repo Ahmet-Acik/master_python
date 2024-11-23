@@ -1,4 +1,4 @@
-# Source:   
+# Source:
 """
     This module demonstrates various common exception types in Python and how to handle them using try-except blocks.
     Exception types covered:
@@ -20,13 +20,14 @@
     Each exception type is demonstrated with a specific scenario and handled using a try-except block.
 """
 try:
-    10/0
+    10 / 0
 except ZeroDivisionError as e:
     print(e)
 
 try:
-    user_input = int(input("Enter a number: "), 10)
-    result = 10/user_input
+    # user_input = int(input("Enter a number: "), 10)
+    user_input = 10
+    result = 10 / user_input
     print(result)
 except ZeroDivisionError as e:
     print(e)
@@ -38,17 +39,19 @@ else:
     print("No exception occurred.")
 finally:
     print("This will be executed no matter what.")
-    
+
 # Common exception types in Python:
 
 ### 1. `AttributeError`
 
 # **Scenario**: Accessing a non-existent attribute of an object.
 
+
 class Car:
     def __init__(self, make, model):
         self.make = make
         self.model = model
+
 
 car = Car("Toyota", "Camry")
 try:
@@ -166,6 +169,7 @@ except RuntimeError as e:
 
 # **Scenario**: Manually raising a `StopIteration` exception in an iterator.
 
+
 class MyIterator:
     def __init__(self, limit):
         self.limit = limit
@@ -180,6 +184,7 @@ class MyIterator:
             return self.count
         else:
             raise StopIteration
+
 
 iterator = MyIterator(3)
 try:
@@ -206,10 +211,10 @@ except StopIteration as e:
 
 # This code will raise an IndentationError when executed
 # try:
-    # def my_function():
-    # print("Hello")  # Incorrect indentation
+# def my_function():
+# print("Hello")  # Incorrect indentation
 # except IndentationError as e:
-    # print(f"IndentationError: {e}")
+# print(f"IndentationError: {e}")
 
 
 ### 15. `MemoryError`
@@ -222,4 +227,124 @@ except StopIteration as e:
 #     print(f"MemoryError: {e}")
 
 
+import traceback
+"""
+A stack trace is a report that provides information about the active stack frames at a specific point in time during the execution of a program. It is typically generated when an exception occurs and helps developers understand the sequence of function calls that led to the error. In Python, stack traces are automatically printed to the console when an unhandled exception occurs.
 
+### Example of a Stack Trace
+
+Here is an example of a Python program that generates a stack trace due to an unhandled exception:
+
+```python
+def function_a():
+    function_b()
+
+def function_b():
+    function_c()
+
+def function_c():
+    raise ValueError("An error occurred in function_c")
+
+try:
+    function_a()
+except Exception as e:
+    print(f"Exception caught: {e}")
+    raise
+```
+
+### Output
+
+When you run the above code, you will see a stack trace similar to this:
+
+```
+Traceback (most recent call last):
+  File "example.py", line 12, in <module>
+    function_a()
+  File "example.py", line 2, in function_a
+    function_b()
+  File "example.py", line 5, in function_b
+    function_c()
+  File "example.py", line 8, in function_c
+    raise ValueError("An error occurred in function_c")
+ValueError: An error occurred in function_c
+```
+
+### Explanation
+
+1. **Traceback**:
+   - The `Traceback` section shows the sequence of function calls that led to the exception. Each line in the traceback corresponds to a call frame, starting from the most recent call and going back to the initial call.
+
+2. **File and Line Number**:
+   - Each line in the traceback includes the file name and line number where the function call occurred. This helps you locate the exact point in the code where the error happened.
+
+3. **Function Name**:
+   - The function name is shown for each call frame, indicating which function was called.
+
+4. **Exception Type and Message**:
+   - The last line of the traceback shows the type of exception (`ValueError`) and the error message ("An error occurred in function_c").
+
+### Customizing Stack Traces
+
+You can customize the way stack traces are handled and displayed using the `traceback` module. This module provides functions to extract, format, and print stack traces.
+
+### Example: Custom Stack Trace Handling
+
+```python
+import traceback
+
+def function_a():
+    function_b()
+
+def function_b():
+    function_c()
+
+def function_c():
+    raise ValueError("An error occurred in function_c")
+
+try:
+    function_a()
+except Exception as e:
+    print("Custom stack trace:")
+    traceback.print_exc()
+```
+
+### Output
+
+The output will be similar to the default stack trace, but you can customize it further if needed:
+
+```
+Custom stack trace:
+Traceback (most recent call last):
+  File "example.py", line 14, in <module>
+    function_a()
+  File "example.py", line 2, in function_a
+    function_b()
+  File "example.py", line 5, in function_b
+    function_c()
+  File "example.py", line 8, in function_c
+    raise ValueError("An error occurred in function_c")
+ValueError: An error occurred in function_c
+```
+
+### Summary
+
+A stack trace provides valuable information about the sequence of function calls that led to an exception. It includes the file name, line number, function name, and the exception type and message. By understanding and using stack traces, you can effectively debug and diagnose issues in your Python programs. The `traceback` module allows you to customize the handling and display of stack traces for more advanced use cases.
+"""
+
+def function_a():
+    function_b()
+
+
+def function_b():
+    function_c()
+
+
+def function_c():
+    raise ValueError("An error occurred in function_c")
+
+
+try:
+    function_a()
+except Exception as e:
+    print("Custom stack trace:")
+    traceback.print_exc()
