@@ -33,6 +33,9 @@ patients = [
 
 
 class Cat:
+
+    species = "Felis catus"  # Class attribute
+
     def __init__(self, name, age, breed):
         self.name = name
         self.age = age
@@ -43,3 +46,28 @@ class Cat:
 
     def meow(self):
         print(f'{self.name} says "Meow!"')
+
+
+class MathOperations:
+    
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    @classmethod
+    def add(cls, a, b):
+        return a + b
+
+    @classmethod
+    def subtract(cls, a, b):
+        return a - b
+
+    @classmethod
+    def multiply(csl, a, b):
+        return a * b
+
+    @classmethod
+    def divide(cls, a, b):
+        return a / b
+
+print(MathOperations.add(2, 3))  # 5
