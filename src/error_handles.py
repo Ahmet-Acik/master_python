@@ -40,6 +40,44 @@ else:
 finally:
     print("This will be executed no matter what.")
 
+
+# well-implemented logging and exception handling mechanism 
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+
+def process_data(data):
+    logging.debug("Processing data: %s", data)
+    
+    if not data:
+        logging.warning("No data provided")
+        raise ValueError("Data cannot be empty")
+    
+    logging.debug("Data processing staterted successfully")
+
+    try:
+        if len(data) < 2:
+            raise ValueError("Data must contain at least two elements")
+        result = data[0] / data[1]
+        logging.info("Calculating Result: %s", result)
+    except ZeroDivisionError as e:
+        logging.error("ZeroDivisionError: %s", e)
+    except TypeError as e:
+        logging.error("TypeError: %s", e)
+    else:
+        logging.info("No exception occurred")
+    finally:
+        logging.info("Data processing complete")
+
+# Example usage
+print(f"process_data([10, 5]) : {process_data([10, 5])}")
+print(f"process_data([10, 0]) : {process_data([10, 0])}")
+print(f"process_data([]) : {process_data([])}")
+
+
+
+
 # Common exception types in Python:
 
 ### 1. `AttributeError`
@@ -229,7 +267,9 @@ except StopIteration as e:
 
 import traceback
 """
-A stack trace is a report that provides information about the active stack frames at a specific point in time during the execution of a program. It is typically generated when an exception occurs and helps developers understand the sequence of function calls that led to the error. In Python, stack traces are automatically printed to the console when an unhandled exception occurs.
+A stack trace is a report that provides information about the active stack frames at a specific point in time during the execution of a program.
+It is typically generated when an exception occurs and helps developers understand the sequence of function calls that led to the error. 
+In Python, stack traces are automatically printed to the console when an unhandled exception occurs.
 
 ### Example of a Stack Trace
 
@@ -272,10 +312,12 @@ ValueError: An error occurred in function_c
 ### Explanation
 
 1. **Traceback**:
-   - The `Traceback` section shows the sequence of function calls that led to the exception. Each line in the traceback corresponds to a call frame, starting from the most recent call and going back to the initial call.
+   - The `Traceback` section shows the sequence of function calls that led to the exception. 
+   Each line in the traceback corresponds to a call frame, starting from the most recent call and going back to the initial call.
 
 2. **File and Line Number**:
-   - Each line in the traceback includes the file name and line number where the function call occurred. This helps you locate the exact point in the code where the error happened.
+   - Each line in the traceback includes the file name and line number where the function call occurred. 
+   This helps you locate the exact point in the code where the error happened.
 
 3. **Function Name**:
    - The function name is shown for each call frame, indicating which function was called.
@@ -285,7 +327,8 @@ ValueError: An error occurred in function_c
 
 ### Customizing Stack Traces
 
-You can customize the way stack traces are handled and displayed using the `traceback` module. This module provides functions to extract, format, and print stack traces.
+You can customize the way stack traces are handled and displayed using the `traceback` module. 
+This module provides functions to extract, format, and print stack traces.
 
 ### Example: Custom Stack Trace Handling
 
@@ -310,7 +353,8 @@ except Exception as e:
 
 ### Output
 
-The output will be similar to the default stack trace, but you can customize it further if needed:
+The output will be similar to the default stack trace, 
+but you can customize it further if needed:
 
 ```
 Custom stack trace:
@@ -328,7 +372,10 @@ ValueError: An error occurred in function_c
 
 ### Summary
 
-A stack trace provides valuable information about the sequence of function calls that led to an exception. It includes the file name, line number, function name, and the exception type and message. By understanding and using stack traces, you can effectively debug and diagnose issues in your Python programs. The `traceback` module allows you to customize the handling and display of stack traces for more advanced use cases.
+A stack trace provides valuable information about the sequence of function calls that led to an exception. 
+It includes the file name, line number, function name, and the exception type and message. 
+By understanding and using stack traces, you can effectively debug and diagnose issues in your Python programs. 
+The `traceback` module allows you to customize the handling and display of stack traces for more advanced use cases.
 """
 
 def function_a():

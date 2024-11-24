@@ -196,7 +196,7 @@
 # print(odd)
 
 
-student = {"name": "Ahmet", "age": 25, "is_student": True}
+# student = {"name": "Ahmet", "age": 25, "is_student": True}
 # print(student.keys())# output: dict_keys(['name', 'age', 'is_student'])
 # print(student.values()) # output: dict_values(['Ahmet', 25, True])
 # print(student.items()) # output: dict_items([('name', 'Ahmet'), ('age', 25), ('is_student', True)])
@@ -467,7 +467,6 @@ student = {"name": "Ahmet", "age": 25, "is_student": True}
 # # # print(numbers_under_5)
 
 
-
 # # strs_to_upper = list(map(lambda x: x.upper(), strs))
 # # print(strs_to_upper)
 
@@ -489,15 +488,54 @@ student = {"name": "Ahmet", "age": 25, "is_student": True}
 # zfill_strs = list(map(lambda x: x.zfill(10), strs))
 # print(zfill_strs)
 
-def get_biweekly_period(week):
-    return (week // 2) + 1
+# def get_biweekly_period(week):
+#     return (week // 2) + 1
 
-# Example usage
-print(get_biweekly_period(0))  # Output: 1
-print(get_biweekly_period(1))  # Output: 1
-print(get_biweekly_period(2))  # Output: 2
-print(get_biweekly_period(3))  # Output: 2
-print(get_biweekly_period(4))  # Output: 3
-print(get_biweekly_period(5))  # Output: 3
-    
-    
+# # Example usage
+# print(get_biweekly_period(0))  # Output: 1
+# print(get_biweekly_period(1))  # Output: 1
+# print(get_biweekly_period(2))  # Output: 2
+# print(get_biweekly_period(3))  # Output: 2
+# print(get_biweekly_period(4))  # Output: 3
+# print(get_biweekly_period(5))  # Output: 3
+
+
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
+
+def process_data(data):
+    logging.debug("Processing data: %s", data)
+    if not data:
+        logging.warning("No data provided")
+        raise ValueError("Data cannot be empty")
+    # Processing logic goes here
+    logging.debug("Data process started successfully")
+
+    try:
+        if len(data) < 2:
+            raise ValueError("Data must contain at least two elements")
+        result = data[0] / data[1]
+        logging.info("Calculating Result: %s", result)
+    except ZeroDivisionError as e:
+        logging.error("ZeroDivisionError: %s", e)
+    except TypeError as e:
+        logging.error("TypeError: %s", e)
+    except Exception as e:
+        logging.error("Exception occurred: %s", e)
+    else:
+        logging.info("No exception occurred")
+    finally:
+        logging.info("Data processing complete")
+
+
+print(f"process_data([10, 5]) : {process_data([10, 5])}")
+# data = [10, 5]
+# process_data(data)
+print(f"process_data([10, 0]) : {process_data([10, 0])}")
+# data = [10, 0]
+# process_data(data)
+print(f"process_data([]) : {process_data([])}")
+# data = []
+# process_data(data)
