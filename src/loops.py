@@ -672,3 +672,10 @@ for index, fruit in enumerate(fruits):
     print(f"index: {index}, fruit: {fruit}")
     
 # The zip() function returns an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator is paired together, etc.
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+for item1, item2 in zip(list1, list2):
+    print(f"item1: {item1}, item2: {item2}")
+    
