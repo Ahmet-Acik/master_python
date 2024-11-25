@@ -142,7 +142,6 @@ smart_light.disconnect_from_internet()
 smart_light.power_off()
 
 
-
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -176,7 +175,6 @@ ta = TeachingAssistant("Alice", 25, "S12345", "Computer Science", ["CS101", "CS1
 ta.introduce()
 ta.study()
 ta.assist()
-
 
 
 class Vehicle:
@@ -218,7 +216,6 @@ hybrid_car.refuel()
 hybrid_car.stop()
 
 
-
 class MediaPlayer:
     def __init__(self, supported_formats):
         self.supported_formats = supported_formats
@@ -258,6 +255,7 @@ smart_media_device.store_media()
 # abstract class
 from abc import ABC, abstractmethod
 
+
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -266,17 +264,19 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         pass
-    
+
+
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
     def area(self):
-        return 3.14 * self.radius ** 2
+        return 3.14 * self.radius**2
 
     def perimeter(self):
         return 2 * 3.14 * self.radius
-    
+
+
 class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
@@ -287,8 +287,222 @@ class Rectangle(Shape):
 
     def perimeter(self):
         return 2 * (self.width + self.height)
-    
+
+
 # Example usage
 circle = Circle(5)
 print(circle.area())
 print(circle.perimeter())
+
+
+# polimorphism
+
+
+class dog:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name + " says Woof!"
+
+
+class cat:
+
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name + " says Meow!"
+
+
+class mouse:
+
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name + " says Squeak!"
+
+
+def animal_speak(animal):  # common interface
+    print(animal.speak())
+
+
+# Example usage
+animal_speak(dog("Tommy"))
+animal_speak(cat("Kitty"))
+animal_speak(mouse("Jerry"))
+
+
+# Mixins  (is-a relationship)  (Person is a JSON)  (Person is a XML) (Person is a CSV)  (Person is a PDF)  (Person is a HTML)
+
+
+class JSONMixin:
+    def to_json(self):
+        import json
+
+        return json.dumps(self.__dict__)
+
+
+class XMLMixin:
+    def to_xml(self):
+        xml = []
+        for key, value in self.__dict__.items():
+            xml.append(f"<{key}>{value}</{key}>")
+        return "".join(xml)
+
+
+class Person(JSONMixin, XMLMixin):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+# Example usage
+person = Person("Alice", 30)
+print(person.to_json())
+print(person.to_xml())
+
+
+class LoggingMixin:
+    def log(self, message):
+        print(f"[LOG] {message}")
+
+
+from datetime import datetime
+
+
+class TimestampMixin:
+    def get_timestamp(self):
+        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
+class User(LoggingMixin, TimestampMixin):
+    def __init__(self, username):
+        self.username = username
+
+    def display_user(self):
+        self.log(f"User: {self.username}")
+        print(f"Timestamp: {self.get_timestamp()}")
+
+
+class Product(LoggingMixin, TimestampMixin):
+    def __init__(self, product_name):
+        self.product_name = product_name
+
+    def display_product(self):
+        self.log(f"Product: {self.product_name}")
+        print(f"Timestamp: {self.get_timestamp()}")
+
+
+# Example usage
+user = User("Alice")
+user.display_user()
+
+product = Product("Laptop")
+product.display_product()
+
+
+# Composition over inheritance  (has-a relationship)  (Car has an engine)  (Car has a wheel) (Car has a door) (Car has a seat) (Car has a steering wheel)
+
+
+class Engine:
+    def __init__(self, capacity):
+        self.capacity = capacity
+
+    def start(self):
+        print("Engine starting.")
+
+    def stop(self):
+        print("Engine stopping.")
+
+
+class Car:
+    def __init__(self):
+        self.engine = Engine(2.0)
+
+    def start(self):
+        print("Car starting.")
+        self.engine.start()
+
+    def stop(self):
+        print("Car stopping.")
+        self.engine.stop()
+
+
+# Example usage
+car = Car()
+car.start()
+car.stop()
+
+
+class CPU:
+    def __init__(self, model):
+        self.model = model
+
+    def process(self):
+        print(f"CPU {self.model} processing.")
+
+
+class RAM:
+    def __init__(self, size):
+        self.size = size
+
+    def load(self):
+        print(f"RAM {self.size}GB loading.")
+
+
+class Storage:
+    def __init__(self, capacity):
+        self.capacity = capacity
+
+    def read(self):
+        print(f"Storage {self.capacity}GB reading.")
+
+    def write(self):
+        print(f"Storage {self.capacity}GB writing.")
+
+
+class Computer:
+    def __init__(self, cpu_model, ram_size, storage_capacity):
+        self.cpu = CPU(cpu_model)
+        self.ram = RAM(ram_size)
+        self.storage = Storage(storage_capacity)
+
+    def start(self):
+        self.cpu.process()
+        self.ram.load()
+        self.storage.read()
+        print("Computer starting.")
+
+
+# Example usage
+computer = Computer("Intel i7", 16, 512)
+computer.start()
+
+
+class Room:
+    def __init__(self, name, area):
+        self.name = name
+        self.area = area
+
+    def describe(self):
+        print(f"{self.name} with area {self.area} square meters.")
+
+
+class House:
+    def __init__(self, rooms):
+        self.rooms = rooms
+
+    def describe(self):
+        for room in self.rooms:
+            room.describe()
+
+
+# Example usage
+living_room = Room("Living Room", 20)
+kitchen = Room("Kitchen", 15)
+bedroom = Room("Bedroom", 25)
+
+house = House([living_room, kitchen, bedroom])
+house.describe()
