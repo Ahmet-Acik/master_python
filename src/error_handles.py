@@ -26,7 +26,7 @@ except ZeroDivisionError as e:
 
 try:
     # user_input = int(input("Enter a number: "), 10)
-    user_input = 10
+    user_input = int(input("Enter a number: "))
     result = 10 / user_input
     print(result)
 except ZeroDivisionError as e:
@@ -232,15 +232,15 @@ except StopIteration as e:
     print("Iteration stopped")
 
 
-### 13. `SyntaxError`
+## 13. `SyntaxError`
 
 # **Scenario**: Writing invalid Python code.
 
 # This code will raise a SyntaxError when executed
-# try:
-#     eval("x === 3")  # Invalid syntax
-# except SyntaxError as e:
-#     print(f"SyntaxError: {e}")
+try:
+    eval("x === 3")  # Invalid syntax
+except SyntaxError as e:
+    print(f"SyntaxError: {e}")
 
 
 ### 14. `IndentationError`

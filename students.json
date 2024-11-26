@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Alice",
+        "grade": 85
+    },
+    {
+        "name": "Bob",
+        "grade": 75
+    },
+    {
+        "name": "Charlie",
+        "grade": 90
+    }
+]
