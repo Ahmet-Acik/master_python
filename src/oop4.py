@@ -284,3 +284,37 @@ class Smartphone:
     send_message(number, message)
 
 """
+class Smartphone:
+        
+        def __init__(self, brand, model, storage_capacity, battery_life):
+            self.brand = brand
+            self.model = model
+            self.storage_capacity = storage_capacity
+            self.battery_life = battery_life
+            self.is_on = False
+            
+        def power_on(self):
+            self.is_on = True
+            print("The phone is on")
+            
+        def power_off(self):
+            self.is_on = False
+            print("The phone is off")
+            
+        def make_call(self, number):
+            if self.is_on:
+                print(f"Calling {number}")
+            else:
+                print("Phone is off")
+                
+        def send_message(self, number, message):
+            if self.is_on:
+                print(f"Sending message to {number}: {message}")
+            else:
+                print("Phone is off")
+                
+my_phone = Smartphone("Apple", "iPhone 16", "512GB", "24 hours")
+my_phone.power_on()
+my_phone.make_call("123456789")
+my_phone.send_message("123456789", "Hello")
+my_phone.power_off()
