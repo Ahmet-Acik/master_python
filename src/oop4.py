@@ -135,3 +135,112 @@ print(average)
 
 details = my_student.get_details()
 print(details)
+
+
+"""
+class Employee:
+    # Properties
+    employee_id
+    name
+    position
+    salary
+    
+    # Methods
+    give_raise(amount)
+    display_information()
+
+"""
+
+class Employee:
+    
+    def __init__(self, employee_id, name, position, salary):
+        self.employee_id = employee_id
+        self.name = name
+        self.position = position
+        self.salary = salary
+        
+    def give_raise(self, amount):
+        self.salary += amount
+        
+    def display_information(self):
+        return f"Employee ID: {self.employee_id}, Name: {self.name}, Position: {self.position}, Salary: {self.salary}"
+    
+my_employee = Employee(123456, "Furkan", "Software Developer", 100000)
+my_employee.give_raise(10000)
+information = my_employee.display_information()
+print(information)
+
+"""
+class Product:
+    # Properties
+    product_id
+    name
+    price
+    stock
+    
+    # Methods
+    sell(amount)
+    restock(amount)
+    get_details()
+"""
+
+class Product:
+        
+        def __init__(self, product_id, name, price, stock):
+            self.product_id = product_id
+            self.name = name
+            self.price = price
+            self.stock = stock
+            
+        def sell(self, amount):
+            if amount <= self.stock:
+                self.stock -= amount
+            else:
+                print("Insufficient stock")
+                
+        def restock(self, amount):
+            self.stock += amount
+            
+        def get_details(self):
+            return f"Product ID: {self.product_id}, Name: {self.name}, Price: {self.price}, Stock: {self.stock}"
+
+my_product = Product(123456, "Laptop", 1000, 10)
+my_product.sell(5)
+my_product.restock(10)
+details = my_product.get_details()
+print(details)
+
+
+"""
+class Library:
+    # Properties
+    name
+    location
+    books
+    members
+    
+    # Methods
+    add_book(book)
+    remove_book(book)
+    register_member(member)
+    lend_book(book, member)
+    return_book(book, member)
+
+"""
+
+"""
+class Smartphone:
+    # Properties
+    brand
+    model
+    storage_capacity
+    battery_life
+    is_on
+    
+    # Methods
+    power_on()
+    power_off()
+    make_call(number)
+    send_message(number, message)
+
+"""
