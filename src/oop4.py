@@ -413,3 +413,168 @@ total = my_cart.calculate_total()
 print(total)
 my_cart.checkout()
 
+
+"""
+class Bank:
+
+    # Properties
+    name
+    location
+    accounts
+    
+    # Methods
+    add_account(account)
+    remove_account(account)
+    calculate_total_deposits()
+    calculate_total_withdrawals()
+    calculate_total_balance()
+    
+"""
+
+
+"""
+class school:
+
+    # Properties
+    name
+    location
+    students
+    teachers
+    
+    # Methods
+    add_student(student)
+    remove_student(student)
+    add_teacher(teacher)
+    remove_teacher(teacher)
+    calculate_average_grade()
+    calculate_student_count()
+    calculate_teacher_count()
+    
+"""
+
+
+"""
+class Restaurant:
+
+    # Properties
+    name
+    location
+    menu
+    employees
+    
+    # Methods
+    add_dish(dish)
+    remove_dish(dish)
+    add_employee(employee)
+    remove_employee(employee)
+    calculate_total_sales()
+    calculate_total_expenses()
+    calculate_total_profit()
+    
+"""
+
+
+"""
+class Hospital:
+    
+    # Properties
+    name
+    location
+    patients
+    doctors
+    
+    # Methods
+    add_patient(patient)
+    remove_patient(patient)
+    add_doctor(doctor)
+    remove_doctor(doctor)
+    calculate_total_patients()
+    calculate_total_doctors()
+    calculate_average_age()
+    
+"""
+ 
+    
+"""
+class Gym:
+        
+    # Properties
+    name
+    location
+    members
+    trainers
+    
+    # Methods
+    add_member(member)
+    remove_member(member)
+    add_trainer(trainer)
+    remove_trainer(trainer)
+    calculate_total_members()
+    calculate_total_trainers()
+    calculate_average_age()
+    
+"""
+ 
+        
+"""
+class Zoo:
+
+        # Properties
+        name
+        location
+        animals
+        employees
+        
+        # Methods
+        add_animal(animal)
+        remove_animal(animal)
+        add_employee(employee)
+        remove_employee(employee)
+        calculate_total_animals()
+        calculate_total_employees()
+        calculate_average_age()
+        
+"""
+ 
+            
+"""
+class University:
+        
+    # Properties
+    name
+    location
+    students
+    professors
+    
+    # Methods
+    add_student(student)
+    remove_student(student)
+    add_professor(professor)
+    remove_professor(professor)
+    calculate_total_students()
+    calculate_total_professors()
+    calculate_average_age()
+    
+"""
+
+
+"""
+class CoffeeShop:
+
+        # Properties
+        name
+        location
+        menu
+        employees
+        
+        # Methods
+        add_item(item)
+        remove_item(item)
+        add_employee(employee)
+        remove_employee(employee)
+        calculate_total_sales()
+        calculate_total_expenses()
+        calculate_total_profit()
+        
+""" 
+    
