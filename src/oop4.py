@@ -227,6 +227,46 @@ class Library:
     return_book(book, member)
 
 """
+class Library:
+    
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.books = []
+        self.members = []
+        
+    def add_book(self, book):
+        self.books.append(book)
+        
+    def remove_book(self, book):
+        self.books.remove(book)
+        
+    def register_member(self, member):
+        self.members.append(member)
+        
+    def lend_book(self, book, member):
+        if book in self.books and member in self.members:
+            print(f"{book} has been lent to {member}")
+        else:
+            print("Book or member not found")
+            
+    def return_book(self, book, member):
+        if book in self.books and member in self.members:
+            print(f"{book} has been returned by {member}")
+        else:
+            print("Book or member not found")
+            
+my_library = Library("City Library", "New York")
+my_library.add_book("Book1")
+my_library.add_book("Book2")
+my_library.add_book("Book3")
+print(my_library.books)
+my_library.register_member("Member1")
+my_library.register_member("Member2")
+print(my_library.members)
+my_library.lend_book("Book1", "Member1")
+my_library.return_book("Book1", "Member1")
+
 
 """
 class Smartphone:
