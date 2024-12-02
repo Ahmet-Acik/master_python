@@ -318,3 +318,53 @@ my_phone.power_on()
 my_phone.make_call("123456789")
 my_phone.send_message("123456789", "Hello")
 my_phone.power_off()
+
+
+"""
+class Hotel:
+    # Properties
+    name
+    location
+    rooms
+    amenities
+    
+    # Methods
+    check_availability()
+    book_room(customer)
+    cancel_booking(booking_id)
+    add_amenity(amenity)
+"""
+
+class Hotel:
+
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.rooms = []
+        self.amenities = []
+        
+    def check_availability(self):
+        return len(self.rooms)
+    
+    def book_room(self, customer):
+        if self.check_availability() > 0:
+            print(f"{customer} has booked a room")
+            self.rooms.pop()
+        else:
+            print("No rooms available")
+            
+    def cancel_booking(self, booking_id):
+        print(f"Booking {booking_id} has been cancelled")
+        
+    def add_amenity(self, amenity):
+        self.amenities.append(amenity)
+        
+my_hotel = Hotel("Grand Hotel", "New York")
+my_hotel.rooms = ["Room1", "Room2", "Room3"]
+print(my_hotel.check_availability())
+my_hotel.book_room("Furkan")
+my_hotel.cancel_booking("123456")
+my_hotel.add_amenity("Swimming pool")
+print(my_hotel.amenities)
+
+
