@@ -76,7 +76,14 @@ for fruit in fruits:
 nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flattened_list = [num for sublist in nested_list for num in sublist]
 print(flattened_list)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+import numpy as np
 
+np.flaten = nested_list
+print(np.flaten)
+
+nested2_list = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+flattened2_list = [i for sublist in nested2_list for i in sublist if i >5 and not i % 2 ==0]
+print(flattened2_list)
 
 ### Example 2: Filtering and Flattening a List of Lists
 # Suppose you have a list of lists of numbers and you want to flatten it into a single list of even numbers.

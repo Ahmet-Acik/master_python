@@ -180,28 +180,28 @@ class BankAccount:
     def __str__(self):
         return f"Owner: {self.owner}, Balance: {self.__balance}, Account Number: {self._account_number}"
 
-# Example usage
-account = BankAccount()
-account.deposit(100)
-print(account)  # Output: Owner: John Doe, Balance: 100, Account Number: 123456789
+# # Example usage
+# account = BankAccount()
+# account.deposit(100)
+# print(account)  # Output: Owner: John Doe, Balance: 100, Account Number: 123456789
 
-# Accessing public attribute
-print(account.owner)  # Output: John Doe
+# # Accessing public attribute
+# print(account.owner)  # Output: John Doe
 
-# Accessing protected attribute (not recommended)
-print(account._account_number)  # Output: 123456789
+# # Accessing protected attribute (not recommended)
+# print(account._account_number)  # Output: 123456789
 
-# Accessing private attribute (will raise an AttributeError)
-try:
-    print(account.__balance)
-except AttributeError as e:
-    print(e)  # Output: 'BankAccount' object has no attribute '__balance'
+# # Accessing private attribute (will raise an AttributeError)
+# try:
+#     print(account.__balance)
+# except AttributeError as e:
+#     print(e)  # Output: 'BankAccount' object has no attribute '__balance'
 
-# Accessing private attribute using name mangling (not recommended)
-print(account._BankAccount__balance)  # Output: 100
+# # Accessing private attribute using name mangling (not recommended)
+# print(account._BankAccount__balance)  # Output: 100
 
-# Accessing protected method (not recommended)
-print(account._get_account_number())  # Output: 123456789
+# # Accessing protected method (not recommended)
+# print(account._get_account_number())  # Output: 123456789
 
-# Accessing private method using name mangling (not recommended)
-print(account._BankAccount__calculate_interest())  # Output: 5.0
+# # Accessing private method using name mangling (not recommended)
+# print(account._BankAccount__calculate_interest())  # Output: 5.0

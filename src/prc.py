@@ -500,42 +500,55 @@
 # print(get_biweekly_period(5))  # Output: 3
 
 
-import logging
+# import logging
 
-logging.basicConfig(level=logging.DEBUG)
-
-
-def process_data(data):
-    logging.debug("Processing data: %s", data)
-    if not data:
-        logging.warning("No data provided")
-        raise ValueError("Data cannot be empty")
-    # Processing logic goes here
-    logging.debug("Data process started successfully")
-
-    try:
-        if len(data) < 2:
-            raise ValueError("Data must contain at least two elements")
-        result = data[0] / data[1]
-        logging.info("Calculating Result: %s", result)
-    except ZeroDivisionError as e:
-        logging.error("ZeroDivisionError: %s", e)
-    except TypeError as e:
-        logging.error("TypeError: %s", e)
-    except Exception as e:
-        logging.error("Exception occurred: %s", e)
-    else:
-        logging.info("No exception occurred")
-    finally:
-        logging.info("Data processing complete")
+# logging.basicConfig(level=logging.DEBUG)
 
 
-print(f"process_data([10, 5]) : {process_data([10, 5])}")
-# data = [10, 5]
-# process_data(data)
-print(f"process_data([10, 0]) : {process_data([10, 0])}")
-# data = [10, 0]
-# process_data(data)
-print(f"process_data([]) : {process_data([])}")
-# data = []
-# process_data(data)
+# def process_data(data):
+#     logging.debug("Processing data: %s", data)
+#     if not data:
+#         logging.warning("No data provided")
+#         raise ValueError("Data cannot be empty")
+#     # Processing logic goes here
+#     logging.debug("Data process started successfully")
+
+#     try:
+#         if len(data) < 2:
+#             raise ValueError("Data must contain at least two elements")
+#         result = data[0] / data[1]
+#         logging.info("Calculating Result: %s", result)
+#     except ZeroDivisionError as e:
+#         logging.error("ZeroDivisionError: %s", e)
+#     except TypeError as e:
+#         logging.error("TypeError: %s", e)
+#     except Exception as e:
+#         logging.error("Exception occurred: %s", e)
+#     else:
+#         logging.info("No exception occurred")
+#     finally:
+#         logging.info("Data processing complete")
+
+
+# print(f"process_data([10, 5]) : {process_data([10, 5])}")
+# # data = [10, 5]
+# # process_data(data)
+# print(f"process_data([10, 0]) : {process_data([10, 0])}")
+# # data = [10, 0]
+# # process_data(data)
+# print(f"process_data([]) : {process_data([])}")
+# # data = []
+# # process_data(data)
+
+
+nested_list1 =[[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+flattened_list = [num for sublist in nested_list1 for num in sublist if num > 3 and not num % 2 == 0]
+print(flattened_list)
+
+import os 
+
+text_file_path ='flt.txt'
+
+if not os.path.exists(text_file_path):
+    with open(text_file_path, 'w') as file:
+        file.write('1,2,3\n4,5,6\n7,8,9')

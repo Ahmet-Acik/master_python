@@ -2,11 +2,24 @@ import os
 
 # Define the file path
 text_file_path = 'nested_list.txt'
+text_file2_path = 'nested2_list.txt'
 
+if not os.path.exists(text_file2_path):
+    with open(text_file2_path,'w') as file:
+        file.write('1,2,3,4,5\n6,7,8,9,10\n11,12,13,14,15\n')
+
+nested2_list = []
+with open(text_file2_path,'r') as file:
+    for line in file:
+        nested2_list.append([int(num) for num in line.strip().split(',')])
 # Check if the file exists, if not, create it with sample data
 if not os.path.exists(text_file_path):
     with open(text_file_path, 'w') as file:
         file.write('1,2,3\n4,5,6\n7,8,9\n')
+        
+odd_numbers = [num for sublist in nested2_list for num in sublist if num % 2 ==1]
+print(odd_numbers)
+
 
 # Read the file and process the data
 nested_list = []
