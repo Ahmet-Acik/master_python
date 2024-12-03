@@ -1,4 +1,3 @@
-
 '''
 class BankAccount:
     # Properties
@@ -33,14 +32,14 @@ class BankAccount:
     def get_balance(self):
         return self.balance
     
-my_accont = BankAccount("123456789", "Furkan", 1000)
-whitdrwal_amount = my_accont.withdraw(500)
-get_balance = my_accont.get_balance()
-print(get_balance)
+# my_accont = BankAccount("123456789", "Furkan", 1000)
+# whitdrwal_amount = my_accont.withdraw(500)
+# get_balance = my_accont.get_balance()
+# print(get_balance)
 
-whitdrwal_amount2 = my_accont.withdraw(400)
-get_balance2 = my_accont.get_balance()
-print(get_balance2)
+# whitdrwal_amount2 = my_accont.withdraw(400)
+# get_balance2 = my_accont.get_balance()
+# print(get_balance2)
 
 
 """
@@ -58,6 +57,9 @@ class Car:
     accelerate(amount)
     brake(amount)
 
+  self.assertEqual(car.speed, 50)
+        self.assertEqual(car.is_moving, True)
+        self.assertEqual(car.is_parked, False)
 """
 
 class Car:
@@ -69,26 +71,43 @@ class Car:
         self.color = color
         self.current_milage = current_milage
         self.current_speed = 0
+        self.is_engine_on = False
+        self.is_moving = False
+        self.is_parked = True
         
         
     def start(self):
+        self.is_engine_on = True
+        self.is_moving = False
+        self.is_parked = False
         print("The car has been started")
         
     def stop(self):
+        self.is_engine_on = False
+        self.is_moving = False
+        self.is_parked = True
         print("The car has been stopped")
         
     def accelerate(self, amount):
+        self.is_moving = True
         self.current_speed += amount
         print(f"The car is going {self.current_speed} km/h")
         
     def brake(self, amount):
         self.current_speed -= amount
-        print(f"The car will stop in {self.current_speed} km/h distance")
+        if self.current_speed < 0:
+            self.current_speed = 0
+        print(f"The car is going {self.current_speed} km/h")
     
-my_car = Car("BMW", "X5", 2021, "Black", 12000)
-my_car.start()
-my_car.accelerate(50)
-my_car.brake(50)
+            
+   
+        
+# my_car = Car("Toyota", "Corolla", 2020, "Black")  
+    
+# my_car = Car("BMW", "X5", 2021, "Black", 12000)
+# my_car.start()
+# my_car.accelerate(50)
+# my_car.brake(50)
 
 
 """
@@ -123,18 +142,18 @@ class Student:
         def get_details(self):
             return f"Student ID: {self.student_id}, Name: {self.name}, Age: {self.age}"
         
-my_student = Student(123456, "Furkan", 25)
-my_student.add_grade(90)
-my_student.add_grade(80)
-my_student.add_grade(70)
-my_student.add_grade(100)
-my_student.add_grade(95)
+# my_student = Student(123456, "Furkan", 25)
+# my_student.add_grade(90)
+# my_student.add_grade(80)
+# my_student.add_grade(70)
+# my_student.add_grade(100)
+# my_student.add_grade(95)
 
-average = my_student.calculate_average()
-print(average)
+# average = my_student.calculate_average()
+# print(average)
 
-details = my_student.get_details()
-print(details)
+# details = my_student.get_details()
+# print(details)
 
 
 """
@@ -430,7 +449,28 @@ class Bank:
     calculate_total_balance()
     
 """
-
+class Bank:
+    
+        def __init__(self, name, location):
+            self.name = name
+            self.location = location
+            self.accounts = []
+            
+        def add_account(self, account):
+            self.accounts.append(account)
+            
+        def remove_account(self, account):
+            self.accounts.remove(account)
+            
+        def calculate_total_deposits(self):
+            return sum(account.deposits for account in self.accounts)
+        
+        def calculate_total_withdrawals(self):
+            return sum(account.withdrawals for account in self.accounts)
+        
+        def calculate_total_balance(self):
+            return sum(account.balance for account in self.accounts)
+        
 
 """
 class school:
@@ -451,7 +491,37 @@ class school:
     calculate_teacher_count()
     
 """
-
+class School:
+    
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.students = []
+        self.teachers = []
+        
+    def add_student(self, student):
+        self.students.append(student)
+        
+    def remove_student(self, student):
+        self.students.remove(student)
+        
+    def add_teacher(self, teacher):
+        self.teachers.append(teacher)
+        
+    def remove_teacher(self, teacher):
+        self.teachers.remove(teacher)
+        
+    def calculate_average_grade(self):
+        return sum(student.grade for student in self.students) / len(self.students)
+    
+    def calculate_student_count(self):
+        return len(self.students)
+    
+    def calculate_teacher_count(self):
+        return len(self.teachers)
+    
+    
+    
 
 """
 class Restaurant:
@@ -472,7 +542,36 @@ class Restaurant:
     calculate_total_profit()
     
 """
-
+class Restaurant:
+    
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.menu = []
+        self.employees = []
+        
+    def add_dish(self, dish):
+        self.menu.append(dish)
+        
+    def remove_dish(self, dish):
+        self.menu.remove(dish)
+        
+    def add_employee(self, employee):
+        self.employees.append(employee)
+        
+    def remove_employee(self, employee):
+        self.employees.remove(employee)
+        
+    def calculate_total_sales(self):
+        return sum(employee.sales for employee in self.employees)
+    
+    def calculate_total_expenses(self):
+        return sum(employee.expenses for employee in self.employees)
+    
+    def calculate_total_profit(self):
+        return self.calculate_total_sales() - self.calculate_total_expenses()
+    
+    
 
 """
 class Hospital:
@@ -493,7 +592,36 @@ class Hospital:
     calculate_average_age()
     
 """
- 
+class Hospital:
+    
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.patients = []
+        self.doctors = []
+        
+    def add_patient(self, patient):
+        self.patients.append(patient)
+        
+    def remove_patient(self, patient):
+        self.patients.remove(patient)
+        
+    def add_doctor(self, doctor):
+        self.doctors.append(doctor)
+        
+    def remove_doctor(self, doctor):
+        self.doctors.remove(doctor)
+        
+    def calculate_total_patients(self):
+        return len(self.patients)
+    
+    def calculate_total_doctors(self):
+        return len(self.doctors)
+    
+    def calculate_average_age(self):
+        return sum(patient.age for patient in self.patients) / len(self.patients)       
+    
+    
     
 """
 class Gym:
@@ -514,7 +642,35 @@ class Gym:
     calculate_average_age()
     
 """
- 
+class Gym:
+        
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.members = []
+        self.trainers = []
+        
+    def add_member(self, member):
+        self.members.append(member)
+        
+    def remove_member(self, member):
+        self.members.remove(member)
+        
+    def add_trainer(self, trainer):
+        self.trainers.append(trainer)
+        
+    def remove_trainer(self, trainer):
+        self.trainers.remove(trainer)
+        
+    def calculate_total_members(self):
+        return len(self.members)
+    
+    def calculate_total_trainers(self):
+        return len(self.trainers)
+    
+    def calculate_average_age(self):
+        return sum(member.age for member in self.members) / len(self.members)
+
         
 """
 class Zoo:
@@ -535,7 +691,34 @@ class Zoo:
         calculate_average_age()
         
 """
- 
+class Zoo:
+            
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.animals = []
+        self.employees = []
+        
+    def add_animal(self, animal):
+        self.animals.append(animal)
+        
+    def remove_animal(self, animal):
+        self.animals.remove(animal)
+        
+    def add_employee(self, employee):
+        self.employees.append(employee)
+        
+    def remove_employee(self, employee):
+        self.employees.remove(employee)
+        
+    def calculate_total_animals(self):
+        return len(self.animals)
+    
+    def calculate_total_employees(self):
+        return len(self.employees)
+    
+    def calculate_average_age(self):
+        return sum(animal.age for animal in self.animals) / len(self.animals)
             
 """
 class University:
@@ -556,7 +739,35 @@ class University:
     calculate_average_age()
     
 """
-
+class University:
+    
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.students = []
+        self.professors = []
+        
+    def add_student(self, student):
+        self.students.append(student)
+        
+    def remove_student(self, student):
+        self.students.remove(student)
+        
+    def add_professor(self, professor):
+        self.professors.append(professor)
+        
+    def remove_professor(self, professor):
+        self.professors.remove(professor)
+        
+    def calculate_total_students(self):
+        return len(self.students)
+    
+    def calculate_total_professors(self):
+        return len(self.professors)
+    
+    def calculate_average_age(self):
+        return sum(student.age for student in self.students) / len(self.students)
+    
 
 """
 class CoffeeShop:
@@ -577,4 +788,31 @@ class CoffeeShop:
         calculate_total_profit()
         
 """ 
+class CoffeeShop:
+        
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.menu = []
+        self.employees = []
+        
+    def add_item(self, item):
+        self.menu.append(item)
+        
+    def remove_item(self, item):
+        self.menu.remove(item)
+        
+    def add_employee(self, employee):
+        self.employees.append(employee)
+        
+    def remove_employee(self, employee):
+        self.employees.remove(employee)
+        
+    def calculate_total_sales(self):
+        return sum(employee.sales for employee in self.employees)
     
+    def calculate_total_expenses(self):
+        return sum(employee.expenses for employee in self.employees)
+    
+    def calculate_total_profit(self):
+        return self.calculate_total_sales() - self.calculate_total_expenses()   

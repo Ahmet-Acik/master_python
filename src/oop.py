@@ -205,3 +205,62 @@ class BankAccount:
 
 # # Accessing private method using name mangling (not recommended)
 # print(account._BankAccount__calculate_interest())  # Output: 5.0
+
+import abc 
+
+class Animal(abc.ABC):
+    
+        @abc.abstractmethod
+        def make_sound(self):
+            pass
+        
+        @abc.abstractmethod
+        def eat(self):
+            pass
+            
+            
+class Dog(Animal):
+        
+        def make_sound(self):
+            print("Woof!")
+            
+        def eat(self):
+            print("Dog is eating")
+        
+class Cat(Animal):
+        
+            def make_sound(self):
+                print("Meow!")
+                
+            def eat(self):
+                print("Cat is eating")
+                
+class Cow(Animal):
+    
+    def make_sound(self):
+        print("Moo!")
+        
+    def eat(self):
+        print("Cow is eating")
+        
+my_dog = Dog()
+my_dog.make_sound()
+
+my_cat = Cat()
+my_cat.make_sound()
+
+my_cow = Cow()
+my_cow.make_sound()
+
+try:
+    my_animal = Animal()
+except TypeError as e:
+    print(e)
+    
+
+animals = [my_dog, my_cat, my_cow]
+
+for animal in animals:
+    animal.make_sound()
+    animal.eat()
+    
