@@ -1,0 +1,36 @@
+class Solution (object):
+    def maximinCount(self, nums):
+        """
+        Given a sorted array, return the maximum count between positive and negative integers.
+        """
+        pos_count = 0
+        neg_count = 0
+
+        for num in nums:
+            if num > 0:
+                pos_count += 1
+            elif num < 0:
+                neg_count += 1
+
+        return max(pos_count, neg_count)
+
+
+
+# Example usage
+solution_instance = Solution()
+print(solution_instance.maximinCount([-2, -1, -1, 1, 2, 3]))  # Output: 3
+print(solution_instance.maximinCount([-3, -2, -1, 0, 0, 1, 2]))  # Output: 3
+print(solution_instance.maximinCount([5, 20, 66, 1314]))  # Output: 4
+
+"""
+
+### Explanation
+1. **Class Definition**: Define a class `Slotion`.
+2. **Method Definition**: Define a method `maximinCount` that takes a list of integers `nums`.
+3. **Initialization**: Initialize `pos_count` and `neg_count` to 0.
+4. **Iteration**: Iterate through the array and increment `pos_count` for positive integers and `neg_count` for negative integers.
+5. **Return Maximum**: Return the maximum of `pos_count` and `neg_count`.
+6. **Example Usage**: Create an instance of the `Slotion` class and call the `maximinCount` method with example inputs.
+
+This implementation follows the specified format and provides the desired functionality.
+"""
