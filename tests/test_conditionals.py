@@ -2,8 +2,6 @@ import sys
 import os
 import unittest
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
-
 from conditionals import (
     check_adult,
     check_age_group,
@@ -15,7 +13,6 @@ from conditionals import (
     check_game,
     get_month_name,
 )
-
 
 class TestConditionals(unittest.TestCase):
 
